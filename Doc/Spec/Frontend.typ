@@ -105,3 +105,9 @@ public IViewNavi? ViewNavi{get;set;}
 
 要讀文件就用 System.IO.Abstractions
 ]
+
+
+#H[DI註冊][
+	在`Ngaq.Frontend/proj/Ngaq.Ui/DiUi.cs`
+	如果你的 ViewModel 需要被注入服務、那你需要在 DiUi中註冊 ViewModel。
+]
