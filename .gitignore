@@ -14,3 +14,4 @@ CsDeclOut/
 .dotnet_cli_home
 *.__Private/*
 _Clone/
+artifacts/

@@ -172,3 +172,10 @@ File: e:\_code\CsNgaq\Ngaq.Backend\Domains\Dictionary\Svc\SvcDictionary.cs
 #H[NormLang分頁搜索 以code字段優先][
 	[2026_0429_105832,]
 ]
+
+
+#H[][
+	[2026_0429_232136,]
+	- 調查 重啓原因
+	- 檢查llm api餘額
+]
