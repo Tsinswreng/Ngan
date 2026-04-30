@@ -40,7 +40,7 @@
       "Try": "試す",
       "Apply": "適用",
       "FontSize": "フォントサイズ",
-      "FontChangeRelaunchNotice": "フォントサイズを変更するにはアプリの再起動が必要です",
+      "FontChangeRelaunchNotice_": "フォントサイズを変更するにはアプリの再起動が必要です",
       "FontSizeRangeError": "フォントサイズが範囲外です",
       "SettingsTitle": "設定",
       "AppVersion": "アプリバージョン",

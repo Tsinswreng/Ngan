@@ -40,7 +40,7 @@
       "Try": "Dùng thử",
       "Apply": "Áp dụng",
       "FontSize": "Cỡ chữ",
-      "FontChangeRelaunchNotice": "Cần khởi động lại ứng dụng sau khi thay đổi cỡ chữ",
+      "FontChangeRelaunchNotice_": "Cần khởi động lại ứng dụng sau khi thay đổi cỡ chữ",
       "FontSizeRangeError": "Cỡ chữ nằm ngoài phạm vi cho phép",
       "SettingsTitle": "Cài đặt",
       "AppVersion": "Phiên bản ứng dụng",

@@ -40,7 +40,7 @@
       "Try": "試用",
       "Apply": "套用",
       "FontSize": "字體大小",
-      "FontChangeRelaunchNotice": "變更字體大小後需要重新啟動應用程式",
+      "FontChangeRelaunchNotice_": "變更字體大小後需要重新啟動應用程序",
       "FontSizeRangeError": "字體大小超出範圍",
       "SettingsTitle": "設定",
       "AppVersion": "應用程式版本",
@@ -62,7 +62,7 @@
       "Statistics": "統計",
       "UserLang": "用戶語言",
       "NormLang": "標準語言",
-      "FileAlreadyExistsNoOverwriteChangePath": "檔案已存在，請變更路徑以避免覆寫",
+      "FileAlreadyExistsNoOverwriteChangePath": "文件已存在，請變更路徑以避免覆寫",
       "InvalidPath": "無效的路徑",
       "ChangeAccount": "切換帳號",
       "Logout": "登出",
@@ -186,7 +186,7 @@
       "NewPreFilter": "新增前置篩選器",
       "PoPreFilterJson": "前置篩選器 JSON 持久化物件",
       "PreFilterDraftUpdated": "前置篩選器草稿已更新",
-      "Row__InvalidCoreFilterField__": "列：{0}無效的核心篩選欄位{1}",
+      "Row__InvalidCoreFilterField__": "列：{0}無效的核心篩選字段{1}",
       "__IsNotValidNumber": "不是有效的數字",
       "PoPreFilter": "前置篩選器持久對象",
       "TextPreview": "文字預覽",
@@ -298,18 +298,18 @@
   "Error": {
     "Common": {
       "ArgErr": "參數錯誤",
-      "NetWorkErr": "網路錯誤",
+      "NetWorkErr": "網絡錯誤",
       "UnknownErr": "未知錯誤",
       "AddFailed": "新增失敗",
       "PermissionDenied": "權限不足",
-      "DataIllegalOrConflict": "資料不合法或衝突"
+      "DataIllegalOrConflict": "數據不合法或衝突"
     },
     "User": {
       "UserNotExist": "用戶不存在",
       "UserAlreadyExist": "用戶已存在",
       "PasswordNotMatch": "密碼不符",
-      "InvalidToken": "無效的權杖",
-      "TokenExpired": "權杖已過期",
+      "InvalidToken": "無效的令牌",
+      "TokenExpired": "令牌已過期",
       "AuthenticationFailed": "驗證失敗"
     },
     "Word": {
@@ -324,7 +324,7 @@
       "WeightCalcResultHandleFailed": "權重計算結果處理失敗",
       "WeightCalcResultStreamNull": "權重計算結果串流為空",
       "WeightCalcResultWordIdInvalid__": "權重計算結果中的單詞ID {0} 無效",
-      "JsWeightCalcCodeEmpty": "JavaScript 權重計算程式碼為空",
+      "JsWeightCalcCodeEmpty": "JavaScript 權重計算代碼為空",
       "JsWeightCalcExecFailed": "JavaScript 權重計算執行失敗",
       "JsWeightCalcReturnedEmpty": "JavaScript 權重計算回傳空值",
       "JsWeightCalcReturnedInvalidJson": "JavaScript 權重計算回傳無效的 JSON",
@@ -342,11 +342,11 @@
       "UpdateFailedDataMayConflict": "更新失敗，資料可能衝突"
     },
     "Dictionary": {
-      "LlmApiNotConfigured": "LLM API 未設定",
-      "LlmApiEmptyResponse": "LLM API 回傳空回應",
-      "LlmApiInvalidResponseStructure": "LLM API 回傳無效的回應結構",
-      "LlmApiEmptyContent": "LLM API 回傳空內容",
-      "LlmResponseParseFailed": "LLM 回應解析失敗"
+      "LlmApiNotConfigured": "大模型 API 未設定",
+      "LlmApiEmptyResponse": "大模型 API 回傳空回應",
+      "LlmApiInvalidResponseStructure": "大模型 API 回傳無效的回應結構",
+      "LlmApiEmptyContent": "大模型 API 回傳空內容",
+      "LlmResponseParseFailed": "大模型 回應解析失敗"
     },
     "Sync": {
       "BatchGetByIdCountMismatch": "批次依ID取得數量不符",
@@ -526,7 +526,7 @@
   "Region": {
     "US": "美國",
     "GB": "英國",
-    "AU": "澳洲",
+    "AU": "澳大利亞",
     "CA": "加拿大",
     "IN": "印度",
     "CN": "中國",
@@ -542,14 +542,14 @@
     "CH": "瑞士",
     "DE": "德國",
     "AT": "奧地利",
-    "IT": "義大利",
+    "IT": "意大利",
     "PT": "葡萄牙",
     "BR": "巴西",
     "RU": "俄羅斯",
     "UA": "烏克蘭",
     "JP": "日本",
-    "KR": "南韓",
-    "SA": "沙烏地阿拉伯",
+    "KR": "韓國",
+    "SA": "沙特阿拉伯",
     "EG": "埃及",
     "AE": "阿拉伯聯合大公國",
     "BD": "孟加拉",

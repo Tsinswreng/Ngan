@@ -40,7 +40,7 @@
       "Try": "미리보기",
       "Apply": "적용",
       "FontSize": "글자 크기",
-      "FontChangeRelaunchNotice": "글자 크기 변경 후 앱을 재시작해야 합니다",
+      "FontChangeRelaunchNotice_": "글자 크기 변경 후 앱을 재시작해야 합니다",
       "FontSizeRangeError": "글자 크기 범위를 벗어났습니다",
       "SettingsTitle": "설정",
       "AppVersion": "앱 버전",

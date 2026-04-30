@@ -40,7 +40,7 @@
       "Try": "Probar",
       "Apply": "Aplicar",
       "FontSize": "Tamaño de fuente",
-      "FontChangeRelaunchNotice": "Es necesario reiniciar la aplicación después de cambiar el tamaño de fuente",
+      "FontChangeRelaunchNotice_": "Es necesario reiniciar la aplicación después de cambiar el tamaño de fuente",
       "FontSizeRangeError": "El tamaño de fuente está fuera de rango",
       "SettingsTitle": "Ajustes",
       "AppVersion": "Versión de la aplicación",

@@ -5,12 +5,12 @@
 	,"RwCfgPath": "Ngaq.Rw.jsonc"
 	,"SqlitePath": "./Ngaq.sqlite"
 	// ,"GalleryDirs": ["", "f:/"]
-	,"ServerBaseUrl": "http://localhost:5000/"
+	//,"ServerBaseUrl": "http://localhost:5000/"
 	,"Background": {
 		"GalleryDirs": [
 			// "E:/_/視聽/圖"
 			// ,"C:/Users/lenovo/Pictures/qq_image/20240913141225"
-			"C:/Users/lenovo/Pictures/屏保/scene"
+			//"C:/Users/lenovo/Pictures/屏保/scene"
 		],
 		"Order": "Random" //TODO
 		,"Stretch": "UniformToFill" //TODO
@@ -27,7 +27,6 @@
 		"ApiUrl": "https://api.siliconflow.cn/v1/chat/completions",
 		"Model": "Qwen/Qwen2.5-72B-Instruct",
 		"ApiKey": ""
-		
 	}
 
 
