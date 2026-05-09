@@ -57,7 +57,7 @@
 	url = https://github.com/Tsinswreng/CsTools.git
 [submodule "Tsinswreng.CsTreeTest"]
 	path = Tsinswreng.CsTreeTest
-	url = https://github.com/Tsinswreng/Tsinswreng.CsTest.git
+	url = https://github.com/Tsinswreng/Tsinswreng.CsTreeTest.git
 [submodule "Tsinswreng.CsTypeAlias"]
 	path = Tsinswreng.CsTypeAlias
 	url = https://github.com/Tsinswreng/CsTypeAlias.git

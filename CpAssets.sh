@@ -8,6 +8,11 @@ mkdir -p $DirLinuxDebug
 cp -r ./ExternalRsrc/*  $DirLinuxDebug
 cp -r ./ExternalRsrc.__Private/*  $DirLinuxDebug
 
+DirLinuxPublish="./Ngaq.Frontend/proj/Ngaq.Linux/bin/Release/net10.0//linux-x64/publish/"
+mkdir -p $DirLinuxPublish
+cp -r ./ExternalRsrc/*  $DirLinuxPublish
+cp -r ./ExternalRsrc.__Private/*  $DirLinuxPublish
+
 
 DirWinPublish=./Ngaq.Frontend/proj/Ngaq.Windows/bin/Release/net10.0/win-x64/publish
 mkdir -p $DirWinPublish
