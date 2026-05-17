@@ -24,6 +24,9 @@ dotnet sln add Tsinswreng.CsPage/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsCfg/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsTempus/proj/**/*.csproj
 dotnet sln add Tsinswreng.AvlnTools/proj/**/*.csproj
+dotnet sln add Tsinswreng.Avln.Dsl/proj/**/*.csproj
+dotnet sln add Tsinswreng.Avln.Grid/proj/**/*.csproj
+dotnet sln add Tsinswreng.Avln.Navi/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsYamlMd/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsTextWithBlob/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsTreeTest/proj/**/*.csproj
