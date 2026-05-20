@@ -45,10 +45,20 @@ btn.Content=Todo.I18n("Login")
 
 ### UI寫法
 
-- 添加子控件時使用使用鏈試調用的`.A()` 方法
-- 初始化`ContentControl.Content`時使用 如賦值的對象需初始化則 `SetContent` 方法; 否則纔可直接`o.Content = xxx`;
-- 組織子控件並加入控件樹時、代碼塊的嵌套 要和 樹的邏輯結構 保持一致 (詳見 ViewSample.cs)
-  - 不能全寫到同一層
+- 添加子控件時使用使用鏈試調用的`.A()` 方法 能鏈式調用就必須鏈式調用 如
+  ```cs
+  p.A(aaa)
+  .A(bbb)
+  ;
+  ```禁止拆散寫如
+  ```cs
+  p.A(aaa);
+  p.A(bbb);
+  ```
+- 初始化`ContentControl.Content`時使用`o.SetContent(xxx)`; 不得直接`o.Content=xxx`。 Border也同理、必須使用`o.SetChild(xxx)`方法。
+- Grid 必須使用 `g.SetRowDefs()` / `g.SetColDefs()`、 不能寫 `g.RowDefinitions=...`。 GridStack同理。GridStack不能寫`g.Grid.SetRowDefs()`、只能寫`g.SetRowDefs()`
+- 組織子控件並加入控件樹時、代碼塊的嵌套 要和 樹的邏輯結構 保持一致 (詳見 ViewSample.cs) 不能全寫到同一層
+- 能直接寫 `= new(...);` 的 就不要寫 `= new SomeType(...);`。 如要寫`b.BorderThickness = new(0);`而不是`b.BorderThickness = new Thickness(0);`
 - 避免硬編碼字體大小;
 - 按鈕綁定的事件是 調用後端接口/異步函數/耗時操作 的、必須用`OpBtn`而不是普通 `Button`
 - 避免重複的樣式設置代碼！當出現重複時 考慮用以下兩種辦法抽取複用: 1. 用工廠函數反回設好樣式的控件; 2. 用Avalonia的Classes/Styles系統 爲需要設置相同樣式的控件分配類名並統一設計
