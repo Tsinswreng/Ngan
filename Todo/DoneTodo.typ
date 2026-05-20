@@ -335,3 +335,11 @@ not found][
 	改`E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Android\MainActivity.cs`
 	
 ]
+
+
+#H[][
+	[2026_0519_235432,2026_0520_083126]
+	WordEditV2
+	無法新增Prop
+	可能學習記錄亦無法新增
+]

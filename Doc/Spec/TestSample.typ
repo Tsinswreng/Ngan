@@ -86,24 +86,21 @@ File: MyDomains/Calculator/TestAdd.cs
 11: 			"YourTestNamePrefix" // optional
 12: 		);
 13: 		var R = register.Register;
-14: 		R("Add positive numbers", async (o) => {
-15: 			var r = Calculator.Add(5, 3);
-16: 			if (r != 8) {
-17: 				throw new Exception($"Expected 8 but got {r}");
-18: 			}
-19: 			return null;
-20: 		});
-21: 		//you can change the props of `register` here and then you can still use `R` directly
-22: 		//e.g. register.UniqNamePrefix = "NewPrefix";
-23: 		R("Add positive and negative numbers", async (o) => {
-24: 			var r = Calculator.Add(5, -3);
-25: 			if (r != 2) {
-26: 				throw new Exception($"Expected 2 but got {r}");
-27: 			}
-28: 			return null;
-29: 		});
-30: 	}
-31: }
+14: 		var T = Assert.IsTrue;
+15: 		R("Add positive numbers", async (o) => {
+16: 			T(Calculator.Add(5, 3)==8);
+17: 			T(Calculator.Add(6, 4)==10);
+18: 			return null;
+19: 		});
+20: 		//you can change the props of `register` here and then you can still use `R` directly
+21: 		//e.g. register.UniqNamePrefix = "NewPrefix";
+22: 		R("Add positive and negative numbers", async (o) => {
+23: 			var r = Calculator.Add(5, -3);
+24: 			T(r==2);
+25: 			return null;
+26: 		});
+27: 	}
+28: }
 
 File: MyDomains/Calculator/TestDivide.cs
 01: using Tsinswreng.CsTreeTest;
@@ -120,24 +117,18 @@ File: MyDomains/Calculator/TestDivide.cs
 12: 		);
 13: 
 14: 		var R = register.Register;
-15: 
+15: 		var T = Assert.IsTrue;
 16: 		R("positive", async (o) => {
-17: 			if(!Calculator.TryIntDivide(20, 4, out var R)){
-18: 				throw new Exception("Expected true but got false");
-19: 			}
-20: 			if(R != 5){
-21: 				throw new Exception($"Expected 5 but got {R}");
-22: 			}
+17: 			T(Calculator.TryIntDivide(20, 4, out var R));
+18: 			T(R==5);
+19: 			return null;
+20: 		});
+21: 		R("Divide by zero", async (o) => {
+22: 			T(!Calculator.TryIntDivide(20, 0, out var R));
 23: 			return null;
 24: 		});
-25: 		R("Divide by zero", async (o) => {
-26: 			if(Calculator.TryIntDivide(20, 0, out var R)){
-27: 				throw new Exception("Expected false but got true");
-28: 			}
-29: 			return null;
-30: 		});
-31: 	}
-32: }
+25: 	}
+26: }
 
 File: MyDomains/Calculator/_TestCalculator.cs
 01: //we suggest one tester class corresponds to one testee class.

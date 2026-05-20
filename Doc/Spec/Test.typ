@@ -77,6 +77,16 @@
 ]
 
 
+#H[斷言][
+	能用斷言就用斷言、如
+	```cs
+	var T = Assert.IsTrue;
+	T(Add(1,2)==3);
+	T(Add(4,5)==6);
+	```
+	避免自己`if(Add(1,2)!=3){throw new Exception("...");}`
+]
+
 #H[注意事項][
 	- 代碼複用 減少重複代碼
 	- 當你在外部調用ISvcXxx裏的Api時、若函數第一個參數爲`IDbFnCtx?`

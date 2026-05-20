@@ -179,3 +179,10 @@ File: e:\_code\CsNgaq\Ngaq.Backend\Domains\Dictionary\Svc\SvcDictionary.cs
 	- 調查 重啓原因
 	- 檢查llm api餘額
 ]
+
+
+
+#H[][
+	[2026_0519_235437]
+	究 ViewModel自動測試
+]
