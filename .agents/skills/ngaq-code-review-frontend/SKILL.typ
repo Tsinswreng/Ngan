@@ -57,6 +57,7 @@ description: 審查C\#代碼(前端專用)
 				p.A(aaa);
 				p.A(bbb);
 				```
+				Styles也同理、必須.A()鏈式調用
 			]
 		- #[初始化`ContentControl.Content`時使用`o.SetContent(xxx)`;
 				不得直接`o.Content=xxx`。

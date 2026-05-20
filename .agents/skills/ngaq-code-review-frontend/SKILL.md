@@ -54,7 +54,7 @@ btn.Content=Todo.I18n("Login")
   ```cs
   p.A(aaa);
   p.A(bbb);
-  ```
+  ```Styles也同理、必須.A()鏈式調用
 - 初始化`ContentControl.Content`時使用`o.SetContent(xxx)`; 不得直接`o.Content=xxx`。 Border也同理、必須使用`o.SetChild(xxx)`方法。
 - Grid 必須使用 `g.SetRowDefs()` / `g.SetColDefs()`、 不能寫 `g.RowDefinitions=...`。 GridStack同理。GridStack不能寫`g.Grid.SetRowDefs()`、只能寫`g.SetRowDefs()`
 - 組織子控件並加入控件樹時、代碼塊的嵌套 要和 樹的邏輯結構 保持一致 (詳見 ViewSample.cs) 不能全寫到同一層
