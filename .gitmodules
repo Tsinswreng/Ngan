@@ -16,60 +16,21 @@
 [submodule "Ngaq.Test"]
 	path = Ngaq.Test
 	url = https://github.com/Tsinswreng/Ngaq.Test.git
-[submodule "Tsinswreng.Avln.StrokeText"]
-	path = Tsinswreng.Avln.StrokeText
-	url = https://github.com/Tsinswreng/Avln.StrokeText.git
 [submodule "Tsinswreng.AvlnTools"]
 	path = Tsinswreng.AvlnTools
 	url = https://github.com/Tsinswreng/AvlnTools.git
-[submodule "Tsinswreng.CsCfg"]
-	path = Tsinswreng.CsCfg
-	url = https://github.com/Tsinswreng/CsCfg.git
-[submodule "Tsinswreng.CsCore"]
-	path = Tsinswreng.CsCore
-	url = https://github.com/Tsinswreng/CsCore.git
-[submodule "Tsinswreng.CsErr"]
-	path = Tsinswreng.CsErr
-	url = https://github.com/Tsinswreng/CsErr.git
-[submodule "Tsinswreng.CsI18n"]
-	path = Tsinswreng.CsI18n
-	url = https://github.com/Tsinswreng/Tsinswreng.CsI18n.git
 [submodule "Tsinswreng.CsJson"]
 	path = Tsinswreng.CsJson
 	url = https://github.com/Tsinswreng/CsJson.git
-[submodule "Tsinswreng.CsPage"]
-	path = Tsinswreng.CsPage
-	url = https://github.com/Tsinswreng/CsPage.git
 [submodule "Tsinswreng.CsSql"]
 	path = Tsinswreng.CsSql
 	url = https://github.com/Tsinswreng/CsSql.git
 [submodule "Tsinswreng.CsSrcGenTools"]
 	path = Tsinswreng.CsSrcGenTools
 	url = https://github.com/Tsinswreng/CsSrcGenTools.git
-[submodule "Tsinswreng.CsTempus"]
-	path = Tsinswreng.CsTempus
-	url = https://github.com/Tsinswreng/Tsinswreng.CsTempus.git
-[submodule "Tsinswreng.CsTextWithBlob"]
-	path = Tsinswreng.CsTextWithBlob
-	url = https://github.com/Tsinswreng/Tsinswreng.CsTextWithBlob.git
-[submodule "Tsinswreng.CsTools"]
-	path = Tsinswreng.CsTools
-	url = https://github.com/Tsinswreng/CsTools.git
-[submodule "Tsinswreng.CsTreeTest"]
-	path = Tsinswreng.CsTreeTest
-	url = https://github.com/Tsinswreng/Tsinswreng.CsTreeTest.git
 [submodule "Tsinswreng.CsTypeAlias"]
 	path = Tsinswreng.CsTypeAlias
 	url = https://github.com/Tsinswreng/CsTypeAlias.git
-[submodule "Tsinswreng.CsU128Id"]
-	path = Tsinswreng.CsU128Id
-	url = https://github.com/Tsinswreng/CsU128Id.git
-[submodule "Tsinswreng.CsYamlMd"]
-	path = Tsinswreng.CsYamlMd
-	url = https://github.com/Tsinswreng/Tsinswreng.CsYamlMd.git
-[submodule "Tsinswreng.Srefl"]
-	path = Tsinswreng.Srefl
-	url = https://github.com/Tsinswreng/Tsinswreng.CsStrAcc.git
 [submodule "Tsinswreng.CsIfaceGen"]
 	path = Tsinswreng.CsIfaceGen
 	url = https://github.com/Tsinswreng/CsIfaceGen.git
