@@ -17,10 +17,10 @@ text: *__text
 ```
 # __text
 ```
-
+按嚴重程度排序
 ```
 
 # comment
 ```bash
-git diff HEAD > changes.txt
+
 ```
