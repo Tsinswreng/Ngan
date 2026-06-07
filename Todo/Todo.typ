@@ -186,3 +186,10 @@ File: e:\_code\CsNgaq\Ngaq.Backend\Domains\Dictionary\Svc\SvcDictionary.cs
 	[2026_0519_235437]
 	究 ViewModel自動測試
 ]
+
+
+#H[雲端同步 推送 似未自動取刷新令牌][
+	[2026_0603_103411]
+	訪問令牌過期後直ᵈ報錯 網絡錯誤
+]
+
