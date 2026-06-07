@@ -68,6 +68,10 @@ typst文檔(.typ) 撰寫規範 (大多數情況你不需要讀此文件)
 
 WebApi 端點層(Controller) 規範
 
+## IView.typ
+
+前端接口 IViewXxx 規範與實現規範
+
 ## skill
 
 在 .agents/skills/下

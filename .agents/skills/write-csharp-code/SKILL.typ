@@ -1,4 +1,3 @@
-// this project use utf-8
 #import "@preview/tsinswreng-auto-heading:0.1.0": auto-heading
 #let H = auto-heading;
 \-\-\-
@@ -59,7 +58,9 @@ description: 編寫C\#代碼
 #H[Ctrlr.typ][
 	WebApi 端點層(Controller) 規範
 ]
-
+#H[IView.typ][
+	前端接口 IViewXxx 規範與實現規範
+]
 
 
 #H[skill][

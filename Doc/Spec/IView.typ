@@ -37,56 +37,6 @@
 ]
 
 #H[設計規範][
-	#H[命名][
-		接口名要有明確頁面語義。
-
-		推薦:
-		- `IViewLearnWord`
-		- `IViewWordInfo`
-		- `IViewWordEditV2Page`
-
-		不推薦:
-		- `IV`
-		- `IPage1`
-		- `IRaw`
-	]
-
-	#H[字段與函數語義][
-		若表達的是用戶輸入框中的原始字符串、命名可帶 `Raw` 前綴。
-
-		示例:
-		```cs
-		public interface IViewWordEditV2Page{
-			str RawHead{get;set;}
-			str RawLanguage{get;set;}
-			Task<nil> ClickSave(CT Ct);
-			Task<nil> ClickDelete(CT Ct);
-			str ErrorText{get;}
-		}
-		```
-
-		如果是最終呈現文本、可不用 `Raw`。
-		如:
-		- `HeadText`
-		- `Descrs`
-		- `StatusText`
-	]
-
-	#H[只表達用戶語義][
-		接口成員命名要站在用戶角度。
-
-		正確示例:
-		- `ClickSave`
-		- `ClickStart`
-		- `HeadText`
-		- `Descrs`
-
-		錯誤示例:
-		- `BtnSave`
-		- `TbHead`
-		- `GridRow1Column2`
-		- `InnerVm`
-	]
 
 	#H[保持薄接口][
 		先只放測試真正需要的能力。
@@ -98,7 +48,7 @@
 
 #H[實現規範][
 	#H[接口由 View 實現][
-		`IView` 應當由 `ViewXxx` 實現。
+		`IViewXxx` 應當由 `ViewXxx` 實現。
 
 		不應當由 `VmXxx` 實現。
 
@@ -129,61 +79,22 @@
 
 	#H[正確示例][
 		```cs
-		class ViewWordInfo: IViewWordInfo{
-			protected StrokeTextBlock? HeadTextCtrl;
-			protected List<StrokeTextBlock> DescriptionTextCtrls = [];
-
-			public str HeadText{
-				get => HeadTextCtrl?.Text ?? "";
-				set{
-					if(HeadTextCtrl is null){return;}
-					HeadTextCtrl.Text = value;
-				}
-			}
-
-			public IList<str>? Descrs{
-				get => DescriptionTextCtrls.Select(x=>x.Text ?? "").ToList();
-				set{
-					if(value is null){return;}
-					var n = Calc.Min(DescriptionTextCtrls.Count, value.Count);
-					for(var i = 0; i < n; i++){
-						DescriptionTextCtrls[i].Text = value[i] ?? "";
-					}
-				}
-			}
-		}
+		
 		```
 	]
 
-	#H[錯誤示例][
-		```cs
-		class ViewWordInfo: IViewWordInfo{
-			public str HeadText{
-				get => Ctx?.Head ?? "";
-				set{
-					if(Ctx is null){return;}
-					Ctx.Head = value;
-				}
-			}
-		}
-		```
-
-		上例錯在:
-		- 沒有從控件讀內容
-		- 沒有經過真實顯示層
-		- 接口測試會退化成 `Vm` 狀態測試
-	]
 
 	#H[實現類內部可以有控件抓手][
 		爲了實作 `IView`、允許 `View` 類保存少量控件引用。
 
 		如:
-		- `TextBlock? HeadTextCtrl`
-		- `TextBox? TbHead`
-		- `Button? BtnSave`
-		- `List<Control> DescriptionTextCtrls`
+		- `public TextBlock? HeadTextCtrl{get;set;}`
+		- `public TextBox? TbHead{get;set;}`
+		- `public Button? BtnSave{get;set;}`
+		- `public List<Control> DescriptionTextCtrls{get;set;}`
+		
 
-		但這些控件抓手 *只放在實現類內部*、
+		但這些控件抓手 *只放在實現類中*、
 		不要暴露到接口中。
 	]
 
