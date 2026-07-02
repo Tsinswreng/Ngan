@@ -8,6 +8,7 @@ dotnet sln add Ngaq.Frontend/proj/**/*.csproj
 dotnet sln add Ngaq.Server/proj/**/*.csproj
 
 dotnet sln add Tsinswreng.CsCore/proj/**/*.csproj
+dotnet sln add Tsinswreng.CsDi/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsTools/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsU128Id/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsI18n/proj/**/*.csproj
@@ -21,6 +22,7 @@ dotnet sln add Tsinswreng.CsIfaceGen/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsDecl/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsSql/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsPage/proj/**/*.csproj
+dotnet sln add Tsinswreng.CsLog/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsCfg/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsTempus/proj/**/*.csproj
 dotnet sln add Tsinswreng.AvlnTools/proj/**/*.csproj

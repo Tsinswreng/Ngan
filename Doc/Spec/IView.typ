@@ -93,6 +93,8 @@
 		- `public Button? BtnSave{get;set;}`
 		- `public List<Control> DescriptionTextCtrls{get;set;}`
 		
+		- 都要public
+		- get方法 若只有一行則用用 => xx寫法 不用{return xx;}
 
 		但這些控件抓手 *只放在實現類中*、
 		不要暴露到接口中。

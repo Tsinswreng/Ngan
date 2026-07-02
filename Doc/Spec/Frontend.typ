@@ -5,7 +5,7 @@
 - 語言C\#
 - 平臺: .NET 10 AOT發佈(所有代碼必須兼容AOT)
 - 框架: Avalonia (純C\# 不用Xaml)
-- UI工具庫: `<項目根目錄>/CsDeclOut/Tsinswreng.AvlnTools/`
+//- UI工具庫: `<項目根目錄>/CsDeclOut/Tsinswreng.AvlnTools/`
 - 因爲要一套UI同時兼容移動端平臺與桌面端平臺、所以所有UI佈局都按豎屏移動端的來做
 
 ]

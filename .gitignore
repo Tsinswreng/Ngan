@@ -1,4 +1,3 @@
-_Note/
 bin/
 obj/
 *.sqlite
@@ -36,3 +35,4 @@ Tsinswreng.CsYamlMd/
 Tsinswreng.OpenXmlTools/
 Tsinswreng.Srefl/
 Tsinswreng.TypstTools/
+.claude/skills/
