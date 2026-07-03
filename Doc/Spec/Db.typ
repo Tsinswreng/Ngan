@@ -113,7 +113,7 @@
 using Tsinswreng.CsSql;
 using IStr_Obj = IDictionary<str, obj?>;
 public class DaoWord{
-	public async Task<IAsyncEnumerable<IdWord?>> BatSlctIdByOwnerHead(//同構批量函數名稱必須以Bat開頭
+	public async Task<IAsyncEnumerable<IdWord?>> OrdSlctIdByOwnerHead(//同構批量函數名稱必須以Ord開頭
 		IDbFnCtx Ctx, //涉及同構批量的函數 第一個參數必須爲IDbFnCtx Ctx
 		IdUser Owner, IAsyncEnumerable<str> Heads // 優先接收異步迭代器
 		,CT Ct // 異步函數必須以CT Ct參數結尾、函數名不另加Async後綴
@@ -146,10 +146,10 @@ public class DaoWord{
 	]
 	
 	#H[函數命名規範][
-		- 批量函數 若返回的可迭代集合元素做不到與入參元素位置一一對應(無則對應null)、則函數命名不得以 `Bat`開頭;
-			- (同構批量應以Bat開頭)
+		- 批量函數 若返回的可迭代集合元素做不到與入參元素位置一一對應(無則對應null)、則函數命名不得以 `Ord`開頭;
+			- (同構批量應以Ord開頭)
 			例: 
-			- `BatScltEntityById` 表示 返回的可迭代集合元素與入參元素位置一一對應。 
+			- `OrdScltEntityById` 表示 返回的可迭代集合元素與入參元素位置一一對應。 
 			- `ScltEntityInId` 函數命名中明確提及`IN`返回的可迭代集合元素與入參元素位置不一一對應。
 	]
 ]
@@ -197,9 +197,9 @@ public class DaoWord{
 寫法如下
 ```cs
 public class SvcWord{
-	public async Task<nil> BatInsertJnWord(IAsyncEnumerable<IJnWord> Words, CT Ct){
+	public async Task<nil> OrdInsertJnWord(IAsyncEnumerable<IJnWord> Words, CT Ct){
 		await SqlCmdMkr.RunInTxn(Ct, async(Ctx)=>
-			DaoWord.BatInsertJnWord(Ctx,Words, Ct)
+			DaoWord.OrdInsertJnWord(Ctx,Words, Ct)
 		);
 		return NIL;
 	}
@@ -216,7 +216,7 @@ public class SvcWord{
 	void fn(IDbUserCtx Ctx, IAsyncEnumerable<MyObj> Itbl, CT Ct){
 		await foreach(var obj in Itbl){
 			//這種情況是 拆散批量 變逐個傳 性能極差
-			BatHandleObj(Ctx, ToolAsyE.ToAsyE([obj]), Ct);
+			OrdHandleObj(Ctx, ToolAsyE.ToAsyE([obj]), Ct);
 		}
 	}
 	```
@@ -237,7 +237,7 @@ public class SvcWord{
 完整Api在`<項目根目錄>/CsDeclOut/Tsinswreng.CsSql/CsTools/`下:
 - `BatchCollector.cs`  *這個很重要！至少這個文件你必須得先看過一遍！*
 ```cs
-public async Task<nil> BatUpsert(
+public async Task<nil> OrdUpsert(
 		IDbFnCtx Ctx, IAsyncEnumerable<TEntity> Ents, CT Ct
 	){
 	var batchSize = T.DbStuff.DfltOptBatch.DupliSqlBatchSize;
@@ -245,7 +245,7 @@ public async Task<nil> BatUpsert(
 		//此處的 EntList 是 IList<TEntity>、只包含了當前批次的實體
 		// 因此他不會把所有IAsyncEnumerable<TEntity> Ents一次性載入內存、滿足流式加載、空間複雜度O(常數)
 		var ids = EntList.Select(x=>(TId)T.GetEntityId(x)!).ToAsyncEnumerable();
-		var existList = BatExistsById(Ctx, ids, Ct);
+		var existList = OrdExistsById(Ctx, ids, Ct);
 		var toInsert = new List<TEntity>();
 		var toUpdate = new List<TEntity>();
 		await foreach(var (i,isExist) in existList.Index()){
@@ -256,8 +256,8 @@ public async Task<nil> BatUpsert(
 				toInsert.Add(ent);
 			}
 		}
-		await BatAdd(Ctx, ToolAsyE.ToAsyE(toInsert), Ct);
-		await BatUpd(Ctx, ToolAsyE.ToAsyE(toUpdate), Ct);
+		await OrdAdd(Ctx, ToolAsyE.ToAsyE(toInsert), Ct);
+		await OrdUpd(Ctx, ToolAsyE.ToAsyE(toUpdate), Ct);
 		return NIL;
 	},batchSize);//此batchSize是可選參數、有默認值。
 	await batch.ConsumeAll(Ents, Ct); //因爲此方法是 寫 操作、故用ConsumeAll。他會把Ents 轉成List、確保消費。如果是讀操作則可用return AddToEnd(Ents, Ct)

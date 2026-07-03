@@ -26,7 +26,7 @@ public interface ISvcKv{
 	// 若傳入的Ctx不爲null則使用傳入的上下文 若爲空則自己開一個帶事務的上下文
 	// 這樣前端通過接口調用API時就有事務了。
 	// 優先定義批量API
-	public Task<nil> BatSet(
+	public Task<nil> OrdSet(
 		IDbFnCtx? Ctx
 		,IAsyncEnumerable<PoKv> Kvs, CT Ct
 	);
@@ -35,14 +35,14 @@ public interface ISvcKv{
 public class SvcKv:ISvcKv{
 	//此函數是 ISvcKv 的方法實現
 	[Impl]
-	public async Task<nil> BatSet(
+	public async Task<nil> OrdSet(
 		IDbFnCtx? Ctx,
 		IAsyncEnumerable<PoKv> Kvs, CT Ct
 	) {
 		//如果操作涉及修改數據庫即需用RunInTxnIfNoCtx
 		//如果是純讀 則用 Ctx??=new DbFnCtx();
 		return await SqlCmdMkr.RunInTxnIfNoCtx(Ctx, Ct, async(Ctx)=>{
-			return await BatSet(Ctx, Kvs, Ct);
+			return await OrdSet(Ctx, Kvs, Ct);
 		});
 	}
 }
