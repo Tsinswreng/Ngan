@@ -8,7 +8,7 @@ files:
     - E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\CodeTemplate\Sample\**
     - E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Infra\ViewModelBase.cs
     - E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\MainView.Decl.cs
-    - E:\_code\CsNgaq\Doc\Spec\IView.typ
+    #- E:\_code\CsNgaq\Doc\Spec\IView.typ
   regex:
     - rootDir: ""
       includes:

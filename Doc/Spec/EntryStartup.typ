@@ -15,6 +15,11 @@
 		入口函數: `Program.Main(string[] args)`。
 
 		啓動早期做的事:
+		- 先調用 `InitAppLog()` 初始化全局日誌源頭:
+			- 使用 Serilog 同時輸出到 console 與 `exe` 同目錄下的 `logs/`
+			- 文件日誌按日滾動，並限制單文件大小與保留份數
+			- 兩個 sink 都放在 async sink 中，儘量降低對主線程的阻塞
+			- 若文件 sink 初始化失敗，回退到僅 console
 		- 若 `args.Length > 1 && args[0] == "--version"` 則輸出版本時間戳。
 		- `BaseDirMgr.Inst._BaseDir = Directory.GetCurrentDirectory()` 設置基準目錄。
 		- 通過 `GetCfgFilePath(args)` 決定只讀配置文件路徑:
