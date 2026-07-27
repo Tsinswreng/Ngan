@@ -8,7 +8,7 @@ dotnet sln add Ngaq.Frontend/proj/**/*.csproj
 dotnet sln add Ngaq.Server/proj/**/*.csproj
 
 dotnet sln add Tsinswreng.CsCore/proj/**/*.csproj
-dotnet sln add Tsinswreng.CsDi/proj/**/*.csproj
+dotnet sln add Tsinswreng.CsCtx/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsTools/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsU128Id/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsI18n/proj/**/*.csproj

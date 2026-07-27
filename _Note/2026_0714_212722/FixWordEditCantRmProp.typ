@@ -29,3 +29,41 @@
 ][
 	
 ]
+
+
+-Sesn[
+	-T[2026_0718_165243][
+		先看skill
+		然後看
+		`E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs`
+		你改一下、
+		把ViewWordEditV2 底部的 刪除按鈕 和 保存按鈕 移到 ViewPoWordEdit 下面。
+		
+		然後按規範 把 ViewWordEditV2引用的其他子View也移到頂層public字段。
+		
+		不懂就問。先去做。
+		先不寫實現。
+		
+	][
+		
+	]
+]
+
+
+-Sesn[
+	-T[2026_0718_165243][
+	先看skill。
+	然後看`E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs`
+	及其他相關文件。
+	
+	現在有個bug、
+	單詞Prop和學習記錄 均無法刪除條目。
+	點進某一個條目、點刪除之後只是從UI上消失了。
+	重新進來就又有了。
+	看看怎麼回事。
+	
+		
+	][
+		
+	]
+]

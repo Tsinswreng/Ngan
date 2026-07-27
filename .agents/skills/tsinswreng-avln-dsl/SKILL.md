@@ -41,11 +41,13 @@ Vm即ViewModel。 示例代碼:
 ```cs
 namespace MyProj.Views.UserProfile;
 using Ctx = VmUserProfile;
-///記得在這裏寫註釋
+///記得在這裏寫註釋f
 public partial class VmUserProfile: ViewModelBase, IMk<Ctx>{
 	//所有Vm都要有protected的無參構造器。
+
 	protected VmUserProfile(){}
-	
+
+
 	//用于從外部直接創建對象、不注入依賴。
 	//不能定義多個public構造器、否則依賴注入會出錯。
 	public static Ctx Mk(){
@@ -99,7 +101,7 @@ public partial class VmUserProfile{
 	){
 		this.SvcUser = SvcUser;
 		this.SvcUserCtx = SvcUserCtx;
-		this.Inited = true;
+		base.Init();
 	}
 	
 	//無參非異步函數、用于給普通按鈕綁定、只涉及ViewModel內部狀態的修改 無耗時操作
@@ -112,7 +114,7 @@ public partial class VmUserProfile{
 // 此函數用于給OpBtn綁定
 	public partial async Task<nil> CallService(CT Ct){
 		//由于注入的依賴都是可空類型、調用時需先判空。
-		CheckInited();
+		CheckInit();
 		
 		//防止UI卡頓
 			await RunTask(async ()=>{
@@ -128,7 +130,7 @@ public partial class VmUserProfile{
 }
 ```
 
-注意:`InInited`, `CheckInit()`, 應當在Vm的基類中定義; `IMk<>`接口應當在項目中定義。若項目未定義則應請示用戶
+注意:`base.Init()`, `IsInited`, `CheckInit()`, 應當在Vm的基類中定義; `IMk<>`接口應當在項目中定義。若項目未定義則應請示用戶
 
 ## View規範
 
@@ -143,6 +145,11 @@ using Tsinswreng.Avln.Grid;
 using Ctx = VmUserProfile;
 ///記得在這裏寫註釋
 public partial class ViewUserProfile: AppViewBase<Ctx>{
+	
+	///記得在這裏寫註釋
+	/// 轉換器也要在Decl中聲明 但不實現。
+	/// 獨立出來可方便測試。
+	public static IValConvtrWithErr ConvIntToCornerRadius;
 	
 	//View必須有且現有一個無參構造器
 	public partial ViewSample();
@@ -197,6 +204,12 @@ using Ctx = VmUserProfile;
 ///記得在這裏寫註釋
 public partial class ViewUserProfile: AppViewBase<Ctx>{
 	
+	///在靜態構造函數中初始化靜態字段如轉換器。注意靜態構造函數不能寫partial。
+	public static ViewUserProfile(){
+		ConvIntToCornerRadius = new FnConvtr<int, CornerRadius>(cnt=>{
+			return new CornerRadius(cnt);
+		});
+	}
 	
 	public partial ViewSample(){
 		Ctx = App.DiOrMk<Ctx>();
@@ -345,9 +358,7 @@ public partial class ViewUserProfile: AppViewBase<Ctx>{
 				//可以在Style中設置綁定
 				x=>x.CornerRadius, CBE.Mk<Ctx>(
 					x=>x.Cnt1,
-					Converter: new FnConvtr<int, CornerRadius>(cnt=>{
-						return new CornerRadius(cnt);
-					})
+					Converter: ConvIntToCornerRadius
 				)
 			)
 		)
