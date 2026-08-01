@@ -45,23 +45,23 @@
 			]
 			
 			
-			我現在 CsNgaq這個項目選擇了自研的CsSql。支持上面的所有要求。
+			我現在 CsNgan.Dict這個項目選擇了自研的CsSql。支持上面的所有要求。
 			
-			CsSql源碼在: `E:\_code\CsNgaq\Tsinswreng.CsSql\proj\Tsinswreng.CsSql\Tsinswreng.CsSql.csproj`
+			CsSql源碼在: `E:\_code\CsNgan.Dict\Tsinswreng.CsSql\proj\Tsinswreng.CsSql\Tsinswreng.CsSql.csproj`
 			具體用法參考:
 ````yaml
-    - E:\_code\CsNgaq\Doc\Spec\Db.typ
-    - E:\_code\CsNgaq\Doc\Spec\Entity.typ
-    - E:\_code\CsNgaq\Doc\Spec\SvcDao.typ
+    - E:\_code\CsNgan.Dict\Doc\Spec\Db.typ
+    - E:\_code\CsNgan.Dict\Doc\Spec\Entity.typ
+    - E:\_code\CsNgan.Dict\Doc\Spec\SvcDao.typ
 ````
-			`E:\_code\CsNgaq\Ngaq.Backend\Db\TswG\LocalTblMgrIniter.cs`
-			`E:\_code\CsNgaq\Ngaq.Backend\Db\TswG\SchemaCfg\UserWord.cs`
-			`E:\_code\CsNgaq\Ngaq.Backend\Domains\Word\Dao\DaoWordV2.cs`
-			`E:\_code\CsNgaq\Ngaq.Backend\Domains\Word\Svc\SvcWordV2.cs`
-			`E:\_code\CsNgaq\Ngaq.Backend\Domains\Word\Svc\SvcWordV2.Crud.cs`
+			`E:\_code\CsNgan.Dict\Ngan.Dict.Backend\Db\TswG\LocalTblMgrIniter.cs`
+			`E:\_code\CsNgan.Dict\Ngan.Dict.Backend\Db\TswG\SchemaCfg\UserWord.cs`
+			`E:\_code\CsNgan.Dict\Ngan.Dict.Backend\Domains\Word\Dao\DaoWordV2.cs`
+			`E:\_code\CsNgan.Dict\Ngan.Dict.Backend\Domains\Word\Svc\SvcWordV2.cs`
+			`E:\_code\CsNgan.Dict\Ngan.Dict.Backend\Domains\Word\Svc\SvcWordV2.Crud.cs`
 			
 			
-			最開始搭基礎的時候CsSql和CsNgaq項目主要是我自己手寫代碼開發的、
+			最開始搭基礎的時候CsSql和CsNgan.Dict項目主要是我自己手寫代碼開發的、
 			那時候我還沒有用AI智能體。
 			
 			現在我覺得我的CsSql用起來還是有些問題:

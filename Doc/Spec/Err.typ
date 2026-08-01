@@ -5,6 +5,6 @@
 
 異常框架 用例 見 `<項目根目錄>/Tsinswreng.CsErr/proj/Tsinswreng.CsErr.Test/Sample.cs`
 
-本程序的異常條目枚舉 在`<項目根目錄>/Ngaq.Core/Infra/Errors/ItemsErr.cs`:
+本程序的異常條目枚舉 在`<項目根目錄>/Ngan.Dict.Core/Infra/Errors/ItemsErr.cs`:
 
 注意內部類按領域劃分

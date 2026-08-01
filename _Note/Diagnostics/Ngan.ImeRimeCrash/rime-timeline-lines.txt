@@ -1,0 +1,93 @@
+1096:07-27 12:37:38.512   424 20849 D vold    : idle maintenance stopped
+1770:07-27 12:38:15.822   424 21508 D vold    : idle maintenance stopped
+2566:07-27 12:42:14.891   424 24359 D vold    : idle maintenance stopped
+6583:07-27 12:47:35.623   424 29133 D vold    : idle maintenance stopped
+14286:07-27 13:00:26.134   424  9104 D vold    : idle maintenance stopped
+16247:07-27 13:01:59.954   424 10943 D vold    : idle maintenance stopped
+19619:07-27 13:05:07.612   424 13545 D vold    : idle maintenance stopped
+21045:07-27 13:07:20.874   424 15171 D vold    : idle maintenance stopped
+21851:07-27 13:08:29.322   424 16468 D vold    : idle maintenance stopped
+23584:07-27 13:34:42.331  1754  1754 I ActivityManager: Idle maintenance over +2h7m19s700ms low RAM for +58s343ms
+23585:07-27 13:34:42.337   424 21826 D vold    : idle maintenance started
+23670:07-27 13:36:32.440   424 21826 D vold    : idle maintenance completed
+24581:07-27 13:56:48.087   424 23135 D vold    : idle maintenance stopped
+26806:07-27 14:19:28.746   424 27074 D vold    : idle maintenance stopped
+29430:07-27 14:29:40.701   424 30165 D vold    : idle maintenance stopped
+30543:07-27 14:30:59.712   424 31623 D vold    : idle maintenance stopped
+31251:07-27 14:32:35.315   424 32686 D vold    : idle maintenance stopped
+32900:07-27 14:48:29.761   424  5139 D vold    : idle maintenance stopped
+33828:07-27 14:48:40.628   424  6744 D vold    : idle maintenance stopped
+37217:07-27 14:54:17.960   424 11108 D vold    : idle maintenance stopped
+41738:07-27 16:23:33.989   424 20951 D vold    : idle maintenance stopped
+42054:07-27 16:23:58.486   424 21167 D vold    : idle maintenance stopped
+46240:07-27 16:29:11.571   424 26199 D vold    : idle maintenance stopped
+46757:07-27 16:29:15.943   424 26430 D vold    : idle maintenance stopped
+47651:07-27 16:38:00.050  1754  1754 I ActivityManager: Idle maintenance over +2h51m29s417ms low RAM for +6s434ms
+47652:07-27 16:38:00.057   424 27561 D vold    : idle maintenance started
+47710:07-27 16:38:50.147   424 27561 D vold    : idle maintenance completed
+48698:07-27 17:04:46.906  1754 30564 D BlobStore: Completed idle maintenance; deleted []
+50352:07-27 17:57:52.474   424 31930 D vold    : idle maintenance stopped
+50697:07-27 17:58:09.048   424 32105 D vold    : idle maintenance stopped
+55280:07-27 18:02:06.804  1754 14446 I ActivityManager: Cancel FGS notification userId: 0 definingUid: 10389 packageName: idm.internet.download.manager.plus processName:idm.internet.download.manager.plus:MediaScannerService ChannelId:idm_plus_download_maintenance_notification foregroundNotiWhen:1785146523798 Notiflags:104
+55281:07-27 18:02:06.809  1754  1754 I NotificationService: Cancel FGS notification CallingUid: 10389 CallingPid: 8517 Pkg: idm.internet.download.manager.plus Id:3 Tag:null UserId:0 MustHaveFlags:0 MustNotHaveFlags:0 Reason:8 foregroundNotiWhen:1785146523798 foregroundNotiFlags:104 foregroundNotiChannelId:idm_plus_download_maintenance_notification
+56390:07-27 18:26:16.110   424 22592 D vold    : idle maintenance stopped
+57311:07-27 18:27:26.699   424 23858 D vold    : idle maintenance stopped
+58490:07-27 18:28:11.819   424 25173 D vold    : idle maintenance stopped
+58863:07-27 18:28:36.613   424 25494 D vold    : idle maintenance stopped
+64536:07-27 18:38:26.754   424 31845 D vold    : idle maintenance stopped
+66866:07-27 18:40:14.095   424  2882 D vold    : idle maintenance stopped
+68035:07-27 18:41:11.879   424  4130 D vold    : idle maintenance stopped
+69469:07-27 18:42:40.756   424  6952 D vold    : idle maintenance stopped
+81973:07-27 19:05:15.380   424 18187 D vold    : idle maintenance stopped
+83937:07-27 19:08:00.892   424 19764 D vold    : idle maintenance stopped
+85226:07-27 19:08:23.750   424 21138 D vold    : idle maintenance stopped
+86455:07-27 19:08:39.068   424 22028 D vold    : idle maintenance stopped
+89391:07-27 19:10:19.824   424 25304 D vold    : idle maintenance stopped
+90692:07-27 19:11:31.333   424 26422 D vold    : idle maintenance stopped
+91327:07-27 19:11:42.470   424 26684 D vold    : idle maintenance stopped
+97327:07-27 19:16:55.199   424 31916 D vold    : idle maintenance stopped
+99119:07-27 19:18:27.178   424 32720 D vold    : idle maintenance stopped
+99893:07-27 19:20:21.771   424  1051 D vold    : idle maintenance stopped
+101807:07-27 19:21:59.696   424  6906 D vold    : idle maintenance stopped
+105097:07-27 19:27:57.446   424  9240 D vold    : idle maintenance stopped
+113199:07-27 20:12:48.059  1754  1754 I ActivityManager: Idle maintenance over +2h54m41s626ms low RAM for +2m35s222ms
+113202:07-27 20:12:48.064   424 24801 D vold    : idle maintenance started
+113288:07-27 20:15:08.142   424 24801 D vold    : idle maintenance completed
+113408:07-27 20:16:54.097   424 25209 D vold    : idle maintenance stopped
+114954:07-27 20:18:46.270   424 28993 D vold    : idle maintenance stopped
+115703:07-27 20:20:31.322   424 30680 D vold    : idle maintenance stopped
+125934:07-27 20:23:07.824   424  3312 D vold    : idle maintenance stopped
+136531:07-27 20:23:43.247   424  4811 D vold    : idle maintenance stopped
+143032:07-27 20:23:54.210 17361 17361 I Ngan.Ime : [Perf][Show:2] OnStartInputView restarting=False orientation=portrait self=1ms total=1ms
+143041:07-27 20:23:54.210 17361 17361 I Ngan.Ime : [Perf][Show:2] OnWindowShown inputViewNull=False orientation=portrait self=0ms total=1ms
+144118:07-27 20:23:56.766 17361 17361 I Ngan.Ime : [Perf][Show:3] OnStartInputView restarting=False orientation=portrait self=36ms total=36ms
+144130:07-27 20:23:56.767 17361 17361 I Ngan.Ime : [Perf][Show:3] OnWindowShown inputViewNull=False orientation=portrait self=0ms total=37ms
+146157:07-27 20:24:15.603  5328  5383 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: apiFn.setup
+146158:07-27 20:24:15.603  5328  5383 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: set_notification_handlerManaged
+146159:07-27 20:24:15.603  5328  5383 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: initialize
+146229:07-27 20:24:15.723  5328  5328 I Ngan.Ime : [IME] OnCreateInputView self=154ms orientation=portrait inputViewType=LoggingAvaloniaView
+146249:07-27 20:24:15.725  5328  5328 I Ngan.Ime : [Perf][Show:1] OnStartInputView restarting=False orientation=portrait self=2ms total=2ms
+146258:07-27 20:24:15.726  5328  5328 I Ngan.Ime : [Perf][Show:1] OnWindowShown inputViewNull=False orientation=portrait self=0ms total=2ms
+146522:07-27 20:24:15.828  5328  5383 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: start_maintenance
+146558:07-27 20:24:15.831  5328  5383 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: join_maintenance_thread
+146560:07-27 20:24:15.831  5328  5401 I Ngan.Ime : [Ngan.ImeRime] notify: deploy start
+148016:07-27 20:24:18.985  5328  5401 I Ngan.Ime : [Ngan.ImeRime] notify: deploy failure
+148017:07-27 20:24:19.002  5328  5383 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: create_session
+148197:07-27 20:24:19.210  5328  5383 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: session=Rime.Api.Types.RimeSessionId
+148198:07-27 20:24:19.210  5328  5383 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession done
+148898:07-27 20:24:22.638  5328  5328 I Ngan.Ime : [Perf][Show:2] OnStartInputView restarting=False orientation=portrait self=16ms total=16ms
+148910:07-27 20:24:22.638  5328  5328 I Ngan.Ime : [Perf][Show:2] OnWindowShown inputViewNull=False orientation=portrait self=0ms total=16ms
+149875:07-27 20:24:27.369  5515  5557 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: apiFn.setup
+149876:07-27 20:24:27.369  5515  5557 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: set_notification_handlerManaged
+149877:07-27 20:24:27.370  5515  5557 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: initialize
+149949:07-27 20:24:27.443  5515  5515 I Ngan.Ime : [IME] OnCreateInputView self=115ms orientation=portrait inputViewType=LoggingAvaloniaView
+149969:07-27 20:24:27.445  5515  5515 I Ngan.Ime : [Perf][Show:1] OnStartInputView restarting=False orientation=portrait self=1ms total=1ms
+149978:07-27 20:24:27.446  5515  5515 I Ngan.Ime : [Perf][Show:1] OnWindowShown inputViewNull=False orientation=portrait self=0ms total=1ms
+150051:07-27 20:24:27.522  5515  5557 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: start_maintenance
+150082:07-27 20:24:27.523  5515  5557 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: join_maintenance_thread
+150084:07-27 20:24:27.524  5515  5574 I Ngan.Ime : [Ngan.ImeRime] notify: deploy start
+151306:07-27 20:24:30.061  5515  5574 I Ngan.Ime : [Ngan.ImeRime] notify: deploy failure
+151310:07-27 20:24:30.092  5515  5557 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: create_session
+151443:07-27 20:24:30.324  5515  5557 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession: session=Rime.Api.Types.RimeSessionId
+151444:07-27 20:24:30.324  5515  5557 I Ngan.Ime : [Ngan.ImeRime] _setupRimeSession done
+167711:07-27 20:29:28.202   424  8199 D vold    : idle maintenance stopped

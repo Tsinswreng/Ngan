@@ -133,8 +133,8 @@ taishite
 //用戶配置文件優先級高於GUI配置
 {
 	"Version": "0.0.1" //架構版本號。無需改
-	,"GuiConfigPath": "Ngaq.Gui.jsonc" //GUI配置文件路徑。
-	,"SqlitePath": "./Ngaq.dev.sqlite" // 單詞表數據庫路徑
+	,"GuiConfigPath": "Ngan.Dict.Gui.jsonc" //GUI配置文件路徑。
+	,"SqlitePath": "./Ngan.Dict.dev.sqlite" // 單詞表數據庫路徑
 	,"ServerBaseUrl": "http://localhost:5000/" // 服務器基礎路徑
 	,"Background": {
 		"GalleryDirs": [ // 隨機背景圖庫路徑

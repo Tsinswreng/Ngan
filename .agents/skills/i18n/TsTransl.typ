@@ -5,10 +5,10 @@
 
 
 #H[模板][
-完整的譯文鍵模板: `Ngaq.Frontend/I18n/keys.ts`
+完整的譯文鍵模板: `Ngan.Dict.Frontend/I18n/keys.ts`
 
 添加指定語言:
-如 `Ngaq.Frontend/I18n/langs/en.ts`
+如 `Ngan.Dict.Frontend/I18n/langs/en.ts`
 
 ```ts
 import type { TI18nKv } from "../i18n";

@@ -1,5 +1,5 @@
 詞典頁中
-E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Dictionary\ViewDictionary.cs
+E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Dictionary\ViewDictionary.cs
 
 當我輸入單詞 點擊查詢按鈕、大模型還沒響應、過了一會我再次點擊查詢按鈕來取消、
 UI上報錯 「未知錯誤」
@@ -31,9 +31,9 @@ fail: GlobalLogger[0]
          --- End of inner exception stack trace ---
          at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
          at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
-         at Ngaq.Backend.Domains.Dictionary.Svc.SvcDictionary.CallLlmApiStream(IReqLlmDictEvt evt, DtoLlmCallParam param, CancellationToken Ct) in E:\_code\CsNgaq\Ngaq.Backend\Domains\Dictionary\Svc\SvcDictionary.cs:line 414
-         at Ngaq.Backend.Domains.Dictionary.Svc.SvcDictionary.Lookup(IUserCtx User, IReqLlmDict Req, CancellationToken Ct) in E:\_code\CsNgaq\Ngaq.Backend\Domains\Dictionary\Svc\SvcDictionary.cs:line 199
-         at Ngaq.Ui.Views.Dictionary.VmDictionary.Lookup(CancellationToken Ct) in E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Dictionary\VmDictionary.cs:line 250
+         at Ngan.Dict.Backend.Domains.Dictionary.Svc.SvcDictionary.CallLlmApiStream(IReqLlmDictEvt evt, DtoLlmCallParam param, CancellationToken Ct) in E:\_code\CsNgan.Dict\Ngan.Dict.Backend\Domains\Dictionary\Svc\SvcDictionary.cs:line 414
+         at Ngan.Dict.Backend.Domains.Dictionary.Svc.SvcDictionary.Lookup(IUserCtx User, IReqLlmDict Req, CancellationToken Ct) in E:\_code\CsNgan.Dict\Ngan.Dict.Backend\Domains\Dictionary\Svc\SvcDictionary.cs:line 199
+         at Ngan.Dict.Ui.Views.Dictionary.VmDictionary.Lookup(CancellationToken Ct) in E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Dictionary\VmDictionary.cs:line 250
 ````
 預期效果是 不要在UI上彈「未知錯誤」
 

@@ -34,7 +34,7 @@ n.	欢腾；欢欣鼓舞；欢庆 \
 如下面这个写法即表示给这个单词加上`my custom tag` 这个标签 \
 ] \
 [[tag|my custom tag]] \
-//# for more keys, see Ngaq.Core/Word/Models/Po/Kv/ConstPropKey.cs \
+//# for more keys, see Ngan.Dict.Core/Word/Models/Po/Kv/ConstPropKey.cs \
 #Delimiter \
 fervent \
 美: [ˈfɜrv(ə)nt] \

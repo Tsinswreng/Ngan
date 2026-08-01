@@ -6,11 +6,11 @@ Tag=$1
 
 
 sh ./TagLibs.sh $Tag
-sh ./TagEtPushRepo.sh  Ngaq.Core  $Tag
-sh ./TagEtPushRepo.sh  Ngaq.Backend  $Tag
-sh ./TagEtPushRepo.sh  Ngaq.Frontend  $Tag
-sh ./TagEtPushRepo.sh  Ngaq.Server  $Tag
-sh ./TagEtPushRepo.sh  Ngaq.Test  $Tag
+sh ./TagEtPushRepo.sh  Ngan.Dict.Core  $Tag
+sh ./TagEtPushRepo.sh  Ngan.Dict.Backend  $Tag
+sh ./TagEtPushRepo.sh  Ngan.Dict.Frontend  $Tag
+sh ./TagEtPushRepo.sh  Ngan.Dict.Server  $Tag
+sh ./TagEtPushRepo.sh  Ngan.Dict.Test  $Tag
 
 
 

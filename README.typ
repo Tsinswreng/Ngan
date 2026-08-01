@@ -9,7 +9,7 @@
 )
 #show heading: set text(blue)
 
-#H[CsNgaq][
+#H[CsNgan.Dict][
 
 An app helps you remember vocabularies
 

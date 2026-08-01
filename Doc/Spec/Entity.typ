@@ -5,8 +5,8 @@
 
 #H[基實體][
 見
-- `Ngaq.Core/Shared/Base/Models/Po/IPoBase.cs`
-- `Ngaq.Core/Shared/Base/Models/Po/PoBase.cs`
+- `Ngan.Dict.Core/Shared/Base/Models/Po/IPoBase.cs`
+- `Ngan.Dict.Core/Shared/Base/Models/Po/PoBase.cs`
 
 ]
 
@@ -20,9 +20,9 @@
 
 #H[IdMyEntity][
 ```cs
-namespace Ngaq.Core.Shared.MyDomain.Models.Po.MyEntity;
+namespace Ngan.Dict.Core.Shared.MyDomain.Models.Po.MyEntity;
 
-using Ngaq.Core.Model.Consts;
+using Ngan.Dict.Core.Model.Consts;
 using StronglyTypedIds;
 
 [StronglyTypedId(ConstStrongTypeIdTemplate.UInt128)]//ulid 48位unix毫秒時間戳+80位隨機數
@@ -46,7 +46,7 @@ public partial class PoMyEntity
 ]
 
 #H[PoBase][
-	Ngaq.Core/Shared/Base/Models/Po/IPoBase.cs
+	Ngan.Dict.Core/Shared/Base/Models/Po/IPoBase.cs
 ]
 
 
@@ -59,7 +59,7 @@ public record struct IdMyEntity{
 	public u8[] ToByteArr();
 	public static readonly IdMyEntity Zero = default; //表示無效值 語義上相當于null
 	public IdMyEntity(){
-		Value = Ngaq.Core.Tools.ToolId.NewUlidUInt128();
+		Value = Ngan.Dict.Core.Tools.ToolId.NewUlidUInt128();
 	}
 	//64進制(位值制 不是base64!)  編碼 0~9  A~Z a~z -_
 	public static IdMyEntity FromLow64Base(string Low64Base);

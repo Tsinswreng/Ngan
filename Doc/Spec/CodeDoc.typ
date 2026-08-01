@@ -1,4 +1,4 @@
-該規範已廢棄。改用 Ngaq.Doc 寫文檔
+該規範已廢棄。改用 Ngan.Dict.Doc 寫文檔
 #import "@preview/tsinswreng-auto-heading:0.1.0": auto-heading
 #let H = auto-heading;
 

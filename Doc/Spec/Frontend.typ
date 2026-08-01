@@ -14,16 +14,16 @@
 - MVVM模式
 
 #H[規範示例(*重要!下面列出的文件一定要看！*)][
-- `Ngaq.Frontend/proj/Ngaq.Ui/CodeTemplate/Sample/ViewSample.cs`
-- `Ngaq.Frontend/proj/Ngaq.Ui/CodeTemplate/Sample/VmSample.cs`
-- `Ngaq.Frontend/proj/Ngaq.Ui/Infra/ViewModelBase.cs`
-- `Ngaq.Frontend/proj/Ngaq.Ui/Views/MainView.Decl.cs`
+- `Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/CodeTemplate/Sample/ViewSample.cs`
+- `Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/CodeTemplate/Sample/VmSample.cs`
+- `Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/Infra/ViewModelBase.cs`
+- `Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/Views/MainView.Decl.cs`
 ]
 
 
 #H[模板(可不看)][
-- `Ngaq.Frontend/proj/Ngaq.Ui/CodeTemplate/ViewXxx.cs`
-- `Ngaq.Frontend/proj/Ngaq.Ui/CodeTemplate/VmXxx.cs`
+- `Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/CodeTemplate/ViewXxx.cs`
+- `Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/CodeTemplate/VmXxx.cs`
 ]
 
 ]
@@ -35,7 +35,7 @@
 
 #H[常用工具][
 帶標題修飾器:
-`Ngaq.Frontend\proj\Ngaq.Ui\Tools\ToolView.cs`
+`Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Tools\ToolView.cs`
 
 #H[視圖導航][
 用ViewModelBase的
@@ -46,7 +46,7 @@ public IViewNavi? ViewNavi{get;set;}
 ]
 
 #H[UiCfg][
-`Ngaq.Frontend\proj\Ngaq.Ui\UiCfg.cs`
+`Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\UiCfg.cs`
 內有字體大小, 主題色與窗口大小。
 ]
 
@@ -67,7 +67,7 @@ public IViewNavi? ViewNavi{get;set;}
 ]
 
 #H[項目使用到的圖標][
-	`Ngaq.Frontend/proj/Ngaq.Ui/Icons/Icons.Decl.cs`
+	`Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/Icons/Icons.Decl.cs`
 	禁止讀 Icons.Impl.cs 文件! 否則會消耗大量token
 ]
 
@@ -98,8 +98,8 @@ public IViewNavi? ViewNavi{get;set;}
 ]
 
 #H[跨平臺要求][
-	確保`Ngaq.Core`和`Ngaq.Ui`兩個程序集 是 平臺無關的(即跨平臺的、包括Web平臺)
-	禁止直接在 Ngaq.Ui 裏面使用任何 非跨平臺的API 如
+	確保`Ngan.Dict.Core`和`Ngan.Dict.Ui`兩個程序集 是 平臺無關的(即跨平臺的、包括Web平臺)
+	禁止直接在 Ngan.Dict.Ui 裏面使用任何 非跨平臺的API 如
 	- 讀寫文件(Web端不支持)
 	- 硬耦合特定操作系統特定API(如剪貼板等)
 
@@ -108,6 +108,6 @@ public IViewNavi? ViewNavi{get;set;}
 
 
 #H[DI註冊][
-	在`Ngaq.Frontend/proj/Ngaq.Ui/DiUi.cs`
+	在`Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/DiUi.cs`
 	如果你的 ViewModel 需要被注入服務、那你需要在 DiUi中註冊 ViewModel。
 ]

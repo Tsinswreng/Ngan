@@ -1,15 +1,15 @@
 -Sesn[
 	-T[2026_0718_213206][
 		先看skill、
-		然看CsNgaq這個項目。
+		然看CsNgan.Dict這個項目。
 		然後看 
 ```yaml
-- E:\_code\CsNgaq\Doc\Spec\Db.typ
-    - E:\_code\CsNgaq\Doc\Spec\Entity.typ
-    - E:\_code\CsNgaq\Doc\Spec\SvcDao.typ
+- E:\_code\CsNgan.Dict\Doc\Spec\Db.typ
+    - E:\_code\CsNgan.Dict\Doc\Spec\Entity.typ
+    - E:\_code\CsNgan.Dict\Doc\Spec\SvcDao.typ
 ```
 		如
-		`E:\_code\CsNgaq\Ngaq.Backend\Domains\Word\Svc\SvcWordV2.Crud.cs`
+		`E:\_code\CsNgan.Dict\Ngan.Dict.Backend\Domains\Word\Svc\SvcWordV2.Crud.cs`
 		有沒有甚麼辦法能更方便地在函數間傳上下文?
 		
 		我的問題是 Dao和Svc裏每個函數都有一個Ctx和一個Ct  比較麻煩。我想要簡化的辦法
@@ -69,7 +69,7 @@ FnA(...)
 		static readonly obj SymDbFnCtx = new Symbol("Tsinswreng.CsSql.DbFnCtx");
 		
 		//在自己的業務程序在中定義此符號:
-		static readonly obj SymUserCtx = new Symbol("Ngaq.UserCtx");
+		static readonly obj SymUserCtx = new Symbol("Ngan.Dict.UserCtx");
 		
 		
 		var calcellationToken = Ctx[SymCt]

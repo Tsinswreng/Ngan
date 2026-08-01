@@ -19,7 +19,7 @@ using Tsinswreng.CsCore;
 ]
 
 #H[目錄][
-	`Ngaq.Doc/proj/Ngaq.Doc/Catalog.cs` 是目錄文件。
+	`Ngan.Dict.Doc/proj/Ngan.Dict.Doc/Catalog.cs` 是目錄文件。
 	當你新增文檔文件時 要在目錄文件中添加對應的條目。
 ]
 

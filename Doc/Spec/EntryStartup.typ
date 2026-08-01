@@ -3,14 +3,14 @@
 
 #H[三個入口程序集啓動流程][
 	本文說明以下三個入口程序集的啓動鏈路:
-	- `Ngaq.Frontend/proj/Ngaq.Windows/Ngaq.Windows.cs`
-	- `Ngaq.Test/proj/Ngaq.Windows.Test/Ngaq.Windows.Test.cs`
-	- `Ngaq.Server/proj/Ngaq.Server.Http/Ngaq.Server.Http.cs`
+	- `Ngan.Dict.Frontend/proj/Ngan.Dict.Windows/Ngan.Dict.Windows.cs`
+	- `Ngan.Dict.Test/proj/Ngan.Dict.Windows.Test/Ngan.Dict.Windows.Test.cs`
+	- `Ngan.Dict.Server/proj/Ngan.Dict.Server.Http/Ngan.Dict.Server.Http.cs`
 
 	文中流程以當前代碼爲準, 便於後續排查「啓動時配置未生效」「服務未註冊」「初始化順序錯」等問題。
 ]
 
-#H[Ngaq.Windows 啓動流程][
+#H[Ngan.Dict.Windows 啓動流程][
 	#H[1. 入口與配置讀取][
 		入口函數: `Program.Main(string[] args)`。
 
@@ -24,7 +24,7 @@
 		- `BaseDirMgr.Inst._BaseDir = Directory.GetCurrentDirectory()` 設置基準目錄。
 		- 通過 `GetCfgFilePath(args)` 決定只讀配置文件路徑:
 			- 有命令行參數時使用 `args[0]`
-			- 否則使用 `Ngaq.jsonc`
+			- 否則使用 `Ngan.Dict.jsonc`
 		- `AppCfg.Inst` 使用雙源配置:
 			- `RoCfg`: 用戶只讀配置(手寫), 由 `CfgPath` 加載
 			- `RwCfg`: GUI 可寫配置, 路徑來自 `KeysClientCfg.RwCfgPath`
@@ -70,7 +70,7 @@
 	]
 
 	#H[4. 典型配置文件][
-		默認客戶端配置文件是程序目錄下 `Ngaq.jsonc`。示例中常見鍵:
+		默認客戶端配置文件是程序目錄下 `Ngan.Dict.jsonc`。示例中常見鍵:
 		- `RwCfgPath` (GUI可寫配置文件路徑)
 		- `SqlitePath`
 		- `ServerBaseUrl`
@@ -78,7 +78,7 @@
 	]
 ]
 
-#H[Ngaq.Windows.Test 啓動流程][
+#H[Ngan.Dict.Windows.Test 啓動流程][
 	#H[1. 入口特徵][
 		入口函數: `Program.Main(string[] args)`。
 
@@ -113,18 +113,18 @@
 	]
 ]
 
-#H[Ngaq.Server.Http 啓動流程][
+#H[Ngan.Dict.Server.Http 啓動流程][
 	#H[1. 入口函數][
 		入口函數:
-		- `NgaqWeb.Main(args)` -> `InitApp(args)` -> `app.Run()`
+		- `Ngan.DictWeb.Main(args)` -> `InitApp(args)` -> `app.Run()`
 	]
 
 	#H[2. 服務端配置載入][
 		`ServerCfg.Inst.LoadFromArgs(args)`:
 		- 若傳參, 用 `args[0]` 作爲配置路徑
 		- 否則:
-			- `DEBUG`: `Ngaq.Server.dev.jsonc`
-			- `RELEASE`: `Ngaq.Server.jsonc`
+			- `DEBUG`: `Ngan.Dict.Server.dev.jsonc`
+			- `RELEASE`: `Ngan.Dict.Server.jsonc`
 
 		典型配置鍵:
 		- `Port`
@@ -183,13 +183,13 @@
 ]
 
 #H[三者對比總結][
-	- `Ngaq.Windows`:
+	- `Ngan.Dict.Windows`:
 		- 面向桌面客戶端
 		- 啓動時讀雙源配置 + 啓動 Avalonia + 本地初始化
-	- `Ngaq.Windows.Test`:
+	- `Ngan.Dict.Windows.Test`:
 		- 面向自動化測試
 		- 啓動時組測試依賴 + 初始化 DB/UserCtx + 執行測試樹
-	- `Ngaq.Server.Http`:
+	- `Ngan.Dict.Server.Http`:
 		- 面向 HTTP 服務端
 		- 啓動時讀服務端配置 + 建立 ASP.NET Core 管道 + 掛路由/中間件 + `Run()`
 ]
@@ -204,9 +204,9 @@
 ]
 
 #H[注意點][
-	當前Ngaq.Windows.Test 未實際接收傳入的配置文件。
+	當前Ngan.Dict.Windows.Test 未實際接收傳入的配置文件。
 	故其sqlite測試數據庫是按默認路徑直接在當前pwd下創建的。
-	測試的數據庫和開發環境的數據庫是分開的 開發環境的數據庫在 Ngaq.Windows/bin/Debug/下。
+	測試的數據庫和開發環境的數據庫是分開的 開發環境的數據庫在 Ngan.Dict.Windows/bin/Debug/下。
 	當測試用例涉及數據庫操作時 會先插入測試數據、測試結束後再清除插入的測試數據使數據庫恢復原狀。
 	確保每次執行測試時結果都獨立不干擾。
 ]

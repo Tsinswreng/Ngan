@@ -1,0 +1,123 @@
+2:07-26 21:47:32.255 25695 25720 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x7ab5ebdf60 in tid 25720 (Thread-9), pid 25695 (nswreng.Ngan.Ime)
+14:07-26 21:47:33.369 29642 29642 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000007ab5ebdf60
+45:07-26 21:52:48.601 12223 26765 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x3 in tid 26765 (FrescoDecodeExe), pid 12223 (com.xingin.xhs)
+56:07-26 21:52:49.997  2008  2008 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000003
+92:07-26 21:54:43.254  4854  4854 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x12f6 in tid 4854 (app_process), pid 4854 (app_process)
+103:07-26 21:54:43.485  4998  4998 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x000012f6
+138:07-26 23:19:32.235 10100 10100 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x2774 in tid 10100 (app_process), pid 10100 (app_process)
+149:07-26 23:19:33.273 10123 10123 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00002774
+184:07-27 00:25:38.431 25976 25976 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x6578 in tid 25976 (app_process), pid 25976 (app_process)
+195:07-27 00:25:39.143 26085 26085 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00006578
+230:07-27 08:15:17.299 18463 18463 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x481f in tid 18463 (app_process), pid 18463 (app_process)
+241:07-27 08:15:17.560 18554 18554 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000481f
+276:07-27 08:46:15.898 31549 31549 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x7b3d in tid 31549 (app_process), pid 31549 (app_process)
+287:07-27 08:46:16.970 31621 31621 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00007b3d
+322:07-27 08:59:03.045 12326 12326 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x3026 in tid 12326 (app_process), pid 12326 (app_process)
+333:07-27 08:59:04.085 13092 13092 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00003026
+368:07-27 11:22:49.018 12573 12573 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x311d in tid 12573 (app_process), pid 12573 (app_process)
+379:07-27 11:22:49.373 12701 12701 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000311d
+414:07-27 12:09:19.765 20107 20107 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x4e8b in tid 20107 (app_process), pid 20107 (app_process)
+425:07-27 12:09:20.664 20169 20169 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00004e8b
+460:07-27 12:17:37.031 32321 32321 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x7e41 in tid 32321 (app_process), pid 32321 (app_process)
+471:07-27 12:17:37.811 32386 32386 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00007e41
+506:07-27 12:23:48.367  8772  8772 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x2244 in tid 8772 (app_process), pid 8772 (app_process)
+517:07-27 12:23:49.031  8806  8806 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00002244
+939:07-27 12:37:35.571 20370 20370 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x4f92 in tid 20370 (app_process), pid 20370 (app_process)
+957:07-27 12:37:36.481 20770 20770 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00004f92
+7007:07-27 12:47:41.773 30263 30263 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x7637 in tid 30263 (app_process), pid 30263 (app_process)
+7024:07-27 12:47:41.988 30374 30374 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00007637
+25709:07-27 14:00:15.915 24339 24339 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x5f13 in tid 24339 (app_process), pid 24339 (app_process)
+25733:07-27 14:00:16.645 24372 24372 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00005f13
+26005:07-27 14:01:59.838 25551 25551 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x63cf in tid 25551 (app_process), pid 25551 (app_process)
+26030:07-27 14:02:00.459 25571 25571 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x000063cf
+26325:07-27 14:05:14.688 26857 26857 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x68e9 in tid 26857 (app_process), pid 26857 (app_process)
+26336:07-27 14:05:15.302 26877 26877 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x000068e9
+29147:07-27 14:27:20.119 29816 29816 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x7478 in tid 29816 (app_process), pid 29816 (app_process)
+29171:07-27 14:27:20.756 29835 29835 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00007478
+32087:07-27 14:35:15.780  3068  3068 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0xbfc in tid 3068 (app_process), pid 3068 (app_process)
+32111:07-27 14:35:16.398  3130  3130 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000bfc
+32359:07-27 14:37:45.976  3966  3966 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0xf7e in tid 3966 (app_process), pid 3966 (app_process)
+32374:07-27 14:37:46.631  4016  4016 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000f7e
+35435:07-27 14:49:56.257 29657 29719 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x74e4276000 in tid 29719 (Thread-9), pid 29657 (nswreng.Ngan.Ime)
+35465:07-27 14:49:57.305  8336  8336 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000074e4276000
+35509:07-27 14:49:57.514  1754  2089 I ActivityManager: Process Tsinswreng.Ngan.Ime (pid 29657) has died: prcp BFGS
+35764:07-27 14:50:04.661  1754  1913 I ActivityManager: Start proc 8514:Tsinswreng.Ngan.Ime/u0a408 for service {Tsinswreng.Ngan.Ime/crc64b26f90b8a564e82f.Ngan.ImeInputMethodService} caller=android
+68776:07-27 18:41:59.287  5801  5801 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x16a9 in tid 5801 (app_process), pid 5801 (app_process)
+68787:07-27 18:41:59.995  5841  5841 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x000016a9
+77006:07-27 18:53:29.328 12508 12508 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x30dc in tid 12508 (app_process), pid 12508 (app_process)
+77018:07-27 18:53:30.123 12543 12543 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x000030dc
+78623:07-27 18:58:10.043 14425 14425 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x3859 in tid 14425 (app_process), pid 14425 (app_process)
+78634:07-27 18:58:10.900 14451 14451 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00003859
+79462:07-27 19:02:13.172 15370 15370 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x3c0a in tid 15370 (app_process), pid 15370 (app_process)
+79473:07-27 19:02:13.830 15397 15397 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00003c0a
+80284:07-27 19:02:54.840 16654 16654 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x410e in tid 16654 (app_process), pid 16654 (app_process)
+80295:07-27 19:02:55.327 16758 16758 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000410e
+81025:07-27 19:03:57.093 17576 17576 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x44a8 in tid 17576 (app_process), pid 17576 (app_process)
+81036:07-27 19:03:57.759 17598 17598 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x000044a8
+83647:07-27 19:07:41.858 18542 18542 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x486e in tid 18542 (app_process), pid 18542 (app_process)
+84105:07-27 19:08:03.290 19473 19473 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000486e
+84141:07-27 19:08:03.433  1754  1914 I ActivityManager: Process PhantomProcessRecord {5a74deb 19473:17775:crash_dump32/u0a391} died
+85889:07-27 19:08:33.452 21622 21622 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x5476 in tid 21622 (app_process), pid 21622 (app_process)
+85995:07-27 19:08:34.468 21842 21842 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00005476
+88264:07-27 19:09:25.946 23787 23787 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x5ceb in tid 23787 (app_process), pid 23787 (app_process)
+88326:07-27 19:09:27.524 23821 23821 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00005ceb
+94372:07-27 19:14:28.946 29548 29548 F DEBUG   : Abort message: 'failed to exchange ownership of file descriptor: fd 268 is owned by ParcelFileDescriptor 0x87fc0a4, was expected to be unowned'
+106824:07-27 19:31:12.834  8514  8552 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x74db763000 in tid 8552 (Thread-8), pid 8514 (nswreng.Ngan.Ime)
+106849:07-27 19:31:13.789 12525 12525 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000074db763000
+106903:07-27 19:31:14.001  1754  2152 I ActivityManager: Process Tsinswreng.Ngan.Ime (pid 8514) has died: prcp BFGS
+107072:07-27 19:31:23.254  1754  1913 I ActivityManager: Start proc 12577:Tsinswreng.Ngan.Ime/u0a408 for service {Tsinswreng.Ngan.Ime/crc64b26f90b8a564e82f.Ngan.ImeInputMethodService} caller=android
+107829:07-27 19:35:01.849 13948 13948 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x367c in tid 13948 (app_process), pid 13948 (app_process)
+107842:07-27 19:35:02.026 14016 14016 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000367c
+110170:07-27 19:39:08.435 12577 12604 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x7b10ffe000 in tid 12604 (Thread-9), pid 12577 (nswreng.Ngan.Ime)
+110233:07-27 19:39:09.414 17126 17126 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000007b10ffe000
+110283:07-27 19:39:09.510  1754  2152 I ActivityManager: Process Tsinswreng.Ngan.Ime (pid 12577) has died: prcp BFGS
+110496:07-27 19:39:33.329  1754  1913 I ActivityManager: Start proc 17361:Tsinswreng.Ngan.Ime/u0a408 for service {Tsinswreng.Ngan.Ime/crc64b26f90b8a564e82f.Ngan.ImeInputMethodService} caller=android
+115472:07-27 20:19:17.404 30057 30057 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x7569 in tid 30057 (app_process), pid 30057 (app_process)
+115833:07-27 20:20:32.571 30093 30093 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00007569
+133192:07-27 20:23:17.398  4113  4113 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x1011 in tid 4113 (app_process), pid 4113 (app_process)
+133217:07-27 20:23:17.501  4153  4153 I crash_dump32: obtaining output fd from tombstoned, type: kDebuggerdTombstoneProto
+133218:07-27 20:23:17.505   698   698 I tombstoned: received crash request for pid 4113
+133219:07-27 20:23:17.507  4153  4153 I crash_dump32: performing dump of process 4113 (target tid = 4113)
+133417:07-27 20:23:18.298  4153  4153 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00001011
+133499:07-27 20:23:18.416  4153  4153 I crash_dump32: start notify aee_aed tombstone path: /data/tombstones/.temporary365
+133500:07-27 20:23:18.417  4153  4153 I crash_dump32: create_crash_dump_socket: convert to 64 socket in 32bit libaee
+133501:07-27 20:23:18.417  4153  4153 I crash_dump32: socket name: android:aee_aed, sfd: 9
+133511:07-27 20:23:18.430  4172  4172 I AEE_AED : read_request: receive requirement from crash_dump32
+133517:07-27 20:23:18.434  4153  4153 I crash_dump32: crash_temporary_file_notify: 
+133518:07-27 20:23:18.434  4153  4153 I crash_dump32: crash_temporary_file_notify exit
+133523:07-27 20:23:18.439  4153  4153 I crash_dump32: start aee dumping
+133524:07-27 20:23:18.439  4153  4153 E crash_dump32: crash_mini_dump_notify: writing 'start dumping' fail: Broken pipe
+133525:07-27 20:23:18.439  4153  4153 I crash_dump32: crash_mini_dump_notify exit!
+133531:07-27 20:23:18.444   698   698 E tombstoned: Tombstone written to: tombstone_12
+144105:07-27 20:23:56.755 17361 17386 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x74d3e42000 in tid 17386 (Thread-8), pid 17361 (nswreng.Ngan.Ime)
+144174:07-27 20:23:56.822  5213  5213 I crash_dump64: obtaining output fd from tombstoned, type: kDebuggerdTombstoneProto
+144175:07-27 20:23:56.823   698   698 I tombstoned: received crash request for pid 17386
+144176:07-27 20:23:56.824  5213  5213 I crash_dump64: performing dump of process 17361 (target tid = 17386)
+144280:07-27 20:23:57.575  5213  5213 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000074d3e42000
+144308:07-27 20:23:57.601  5213  5213 I crash_dump64: start notify aee_aed tombstone path: /data/tombstones/.temporary367
+144309:07-27 20:23:57.601  5213  5213 I crash_dump64: socket name: android:aee_aed, sfd: 9
+144317:07-27 20:23:57.607  5219  5219 I AEE_AED : read_request: receive requirement from crash_dump64
+144323:07-27 20:23:57.608  5213  5213 I crash_dump64: crash_temporary_file_notify: 
+144324:07-27 20:23:57.609  5213  5213 I crash_dump64: crash_temporary_file_notify exit
+144325:07-27 20:23:57.610  5213  5213 I crash_dump64: start aee dumping
+144326:07-27 20:23:57.610  5213  5213 E crash_dump64: crash_mini_dump_notify: writing 'start dumping' fail: Broken pipe
+144327:07-27 20:23:57.610  5213  5213 I crash_dump64: crash_mini_dump_notify exit!
+144331:07-27 20:23:57.613   698   698 E tombstoned: Tombstone written to: tombstone_13
+144383:07-27 20:23:57.744  1754  2620 I ActivityManager: Process Tsinswreng.Ngan.Ime (pid 17361) has died: prcp BFGS
+145999:07-27 20:24:15.053  1754  1913 I ActivityManager: Start proc 5328:Tsinswreng.Ngan.Ime/u0a408 for service {Tsinswreng.Ngan.Ime/crc64b26f90b8a564e82f.Ngan.ImeInputMethodService} caller=android
+148854:07-27 20:24:22.624  5328  5360 F libc    : Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x74d62a2560 in tid 5360 (Thread-8), pid 5328 (nswreng.Ngan.Ime)
+148954:07-27 20:24:22.691  5480  5480 I crash_dump64: obtaining output fd from tombstoned, type: kDebuggerdTombstoneProto
+148955:07-27 20:24:22.692   698   698 I tombstoned: received crash request for pid 5360
+148956:07-27 20:24:22.695  5480  5480 I crash_dump64: performing dump of process 5328 (target tid = 5360)
+149017:07-27 20:24:22.847  5480  5480 F DEBUG   : signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000074d62a2560
+149049:07-27 20:24:22.863  5480  5480 I crash_dump64: start notify aee_aed tombstone path: /data/tombstones/.temporary369
+149050:07-27 20:24:22.864  5480  5480 I crash_dump64: socket name: android:aee_aed, sfd: 9
+149058:07-27 20:24:22.868  5488  5488 I AEE_AED : read_request: receive requirement from crash_dump64
+149064:07-27 20:24:22.869  5480  5480 I crash_dump64: crash_temporary_file_notify: 
+149065:07-27 20:24:22.869  5480  5480 I crash_dump64: crash_temporary_file_notify exit
+149066:07-27 20:24:22.870  5480  5480 I crash_dump64: start aee dumping
+149067:07-27 20:24:22.870  5480  5480 E crash_dump64: crash_mini_dump_notify: writing 'start dumping' fail: Broken pipe
+149068:07-27 20:24:22.870  5480  5480 I crash_dump64: crash_mini_dump_notify exit!
+149075:07-27 20:24:22.873   698   698 E tombstoned: Tombstone written to: tombstone_14
+149150:07-27 20:24:22.935  1754  2258 I ActivityManager: Process Tsinswreng.Ngan.Ime (pid 5328) has died: prcp BFGS
+149703:07-27 20:24:27.008  1754  1913 I ActivityManager: Start proc 5515:Tsinswreng.Ngan.Ime/u0a408 for service {Tsinswreng.Ngan.Ime/crc64b26f90b8a564e82f.Ngan.ImeInputMethodService} caller=android

@@ -1,18 +1,18 @@
 -Sesn[
 	-T[2026_0718_131122][
 		先看skill。
-		然後看CsNgaq這個項目。
+		然後看CsNgan.Dict這個項目。
 		客戶端發版的時候、
 		有以下流程:
 		
 		手上改代碼中的AppVer
-		`E:\_code\CsNgaq\Ngaq.Core\Infra\AppVersion.cs`
+		`E:\_code\CsNgan.Dict\Ngan.Dict.Core\Infra\AppVersion.cs`
 		
 		寫更新說明
-		`E:\_code\CsNgaq\CHANGELOG.typ`
+		`E:\_code\CsNgan.Dict\CHANGELOG.typ`
 		
 		安卓改版本號
-		`E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Android\Ngaq.Android.csproj
+		`E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Android\Ngan.Dict.Android.csproj
 		<ApplicationDisplayVersion>1.2.17.26276</ApplicationDisplayVersion>
 		`
 		

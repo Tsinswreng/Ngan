@@ -19,13 +19,13 @@ description: 多語言本地化/國際化(i18n)指南。僅當用戶明確要求
 
 #H[i18n 譯文 json生成流程][
 	#H[TS鍵結構定義][
-		Ngaq.Frontend/I18n/keys.ts
+		Ngan.Dict.Frontend/I18n/keys.ts
 	]
 	#H[具體語言翻譯][
-		如 `Ngaq.Frontend/I18n/langs/en-US.ts`
+		如 `Ngan.Dict.Frontend/I18n/langs/en-US.ts`
 	]
 	#H[具體語言註冊][
-		`Ngaq.Frontend/I18n/main.ts`
+		`Ngan.Dict.Frontend/I18n/main.ts`
 		如
 		```ts
 		import en_US from "./langs/en-US"
@@ -42,7 +42,7 @@ description: 多語言本地化/國際化(i18n)指南。僅當用戶明確要求
 
 #H[國際化鍵的定義][
 	#H[TS側的鍵定義][
-		`Ngaq.Frontend/I18n/keys.ts`:
+		`Ngan.Dict.Frontend/I18n/keys.ts`:
 
 		```ts
 		type Full = {
@@ -134,11 +134,11 @@ description: 多語言本地化/國際化(i18n)指南。僅當用戶明確要求
 	#H[C\# 側的鍵定義][
 		#H[View][
 			```cs
-			namespace Ngaq.Ui.Infra.I18n;
-			using static Ngaq.Ui.Infra.I18n.I18nKey;
+			namespace Ngan.Dict.Ui.Infra.I18n;
+			using static Ngan.Dict.Ui.Infra.I18n.I18nKey;
 			using K = II18nKey;
 
-			[Doc(@$"僅定義Ngaq.Ui 界面上的文字。
+			[Doc(@$"僅定義Ngan.Dict.Ui 界面上的文字。
 			如需定義異常鍵 移步 {nameof(KeysErr)}。
 			")]
 			public static partial class KeysUiI18n{
@@ -165,7 +165,7 @@ description: 多語言本地化/國際化(i18n)指南。僅當用戶明確要求
 		]
 		#H[Error][
 			看
-			Ngaq.Core/Infra/Errors/KeysErr.cs
+			Ngan.Dict.Core/Infra/Errors/KeysErr.cs
 
 			結構類似。
 		]
@@ -186,7 +186,7 @@ description: 多語言本地化/國際化(i18n)指南。僅當用戶明確要求
 	建議爲內部類鍵節點建立別名來縮短代碼
 	如
 	```cs
-	using K = Ngaq.Ui.Infra.I18n.KeysUiI18n.Common;
+	using K = Ngan.Dict.Ui.Infra.I18n.KeysUiI18n.Common;
 
 	var userName = I[K.UserName]; //不需要傳參數時直接用[]
 	var exampleWithArg = I.Get(K.__CannotBeEmpty, "User Name"); //需要傳參數時纔用Get
@@ -237,7 +237,7 @@ description: 多語言本地化/國際化(i18n)指南。僅當用戶明確要求
 	#H[在C\#中調用時須盡量使代碼簡短][
 		#H[正確示例][
 			```cs
-			using K = Ngaq.Ui.Infra.I18n.KeysUiI18n.Common;
+			using K = Ngan.Dict.Ui.Infra.I18n.KeysUiI18n.Common;
 			var userName = I[K.UserName];
 			```
 

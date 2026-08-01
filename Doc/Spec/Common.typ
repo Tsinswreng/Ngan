@@ -41,14 +41,14 @@ global using CT = CancellationToken;
 ]
 
 #H[跨平臺][
-	確保`Ngaq.Core`和`Ngaq.Ui`兩個程序集 是 平臺無關的(即跨平臺的、包括Web平臺)
-	禁止直接在 Ngaq.Ui 裏面使用任何 非跨平臺的API 如
+	確保`Ngan.Dict.Core`和`Ngan.Dict.Ui`兩個程序集 是 平臺無關的(即跨平臺的、包括Web平臺)
+	禁止直接在 Ngan.Dict.Ui 裏面使用任何 非跨平臺的API 如
 	- 讀寫文件(Web端不支持)
 	- 硬耦合特定操作系統特定API(如剪貼板等)
 	
 	如有訪問需要、需要通過interface+依賴注入來訪問。接口實現放在其他程序集中。
-	- 如果是讀寫文件類的、 除了Web平臺不支持 其他平臺的支持的、接口實現寫在Ngaq.Backend裏。(建議直接用`System.IO.Abstractions`這個第三方庫。已經裝有了。)
-	- 如果是 調用操作系統特定API的、 把接口實現寫在特定 平臺 的前端程序集裏(比如你要調Windows專有API你就把接口實現寫Ngaq.Windows裏)
+	- 如果是讀寫文件類的、 除了Web平臺不支持 其他平臺的支持的、接口實現寫在Ngan.Dict.Backend裏。(建議直接用`System.IO.Abstractions`這個第三方庫。已經裝有了。)
+	- 如果是 調用操作系統特定API的、 把接口實現寫在特定 平臺 的前端程序集裏(比如你要調Windows專有API你就把接口實現寫Ngan.Dict.Windows裏)
 ]
 
 

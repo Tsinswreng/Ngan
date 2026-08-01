@@ -1,5 +1,5 @@
 詞典頁中
-E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Dictionary\ViewDictionary.cs
+E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Dictionary\ViewDictionary.cs
 
 搜索框右邊 有個保存(收藏)按鈕
 再右邊有個菜單按鈕
@@ -42,7 +42,7 @@ E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Dictionary\ViewDictionary.cs
 
 2026_0705_131837[
 	詞典頁中
-E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Dictionary\ViewDictionary.cs
+E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Dictionary\ViewDictionary.cs
 
 現在快速保存按钮 有個bug
 就是有時候查單詞  明明大模型已經響應完了 也解析完了

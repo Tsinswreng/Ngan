@@ -30,7 +30,7 @@
 	不直接註冊每個測試類, 而是收編下級 TestMgr。
 
 	參考:
-	- `Ngaq.Test/proj/Ngaq.Windows.Test/WindowsTestMgr.cs`
+	- `Ngan.Dict.Test/proj/Ngan.Dict.Windows.Test/WindowsTestMgr.cs`
 
 	參考寫法:
 	```cs
@@ -71,9 +71,9 @@
 
 
 #H[本項目的幾個測試程序集][
-	Ngaq.Test/proj/Ngaq.Core.Test/Ngaq.Core.Test.csproj
-	Ngaq.Test/proj/Ngaq.Backend.Test/Ngaq.Backend.Test.csproj
-	Ngaq.Test/proj/Ngaq.Windows.Test/Ngaq.Windows.Test.csproj
+	Ngan.Dict.Test/proj/Ngan.Dict.Core.Test/Ngan.Dict.Core.Test.csproj
+	Ngan.Dict.Test/proj/Ngan.Dict.Backend.Test/Ngan.Dict.Backend.Test.csproj
+	Ngan.Dict.Test/proj/Ngan.Dict.Windows.Test/Ngan.Dict.Windows.Test.csproj
 ]
 
 

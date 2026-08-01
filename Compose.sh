@@ -1,4 +1,4 @@
 #!/bin/bash
 # should run in linux
-cd Ngaq.Server
+cd Ngan.Dict.Server
 docker compose up -d

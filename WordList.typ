@@ -26,7 +26,7 @@ jubilation
 n.	歡騰；歡欣鼓舞；歡慶
 网絡	慶祝；歡呼；喜悅
 [[tag|my custom tag]] # key-value pairs like this is supported.
-# for more keys, see Ngaq.Core/Word/Models/Po/Kv/ConstPropKey.cs
+# for more keys, see Ngan.Dict.Core/Word/Models/Po/Kv/ConstPropKey.cs
 ````
 fervent
 美: [ˈfɜrv(ə)nt]

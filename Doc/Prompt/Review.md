@@ -1,7 +1,7 @@
 ```yaml
 files:
   paths:
-    - E:\_code\CsNgaq\.agents\skills\ngaq-code-review\SKILL.typ
+    - E:\_code\CsNgan.Dict\.agents\skills\ngan.dict-code-review\SKILL.typ
   regex:
     - rootDir: ""
       includes:

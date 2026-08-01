@@ -1,8 +1,8 @@
-git submodule add  https://github.com/Tsinswreng/Ngaq.Core.git  Ngaq.Core
-git submodule add  https://github.com/Tsinswreng/Ngaq.Backend.git  Ngaq.Backend
-git submodule add  https://github.com/Tsinswreng/Ngaq.Frontend.git  Ngaq.Frontend
-git submodule add  https://github.com/Tsinswreng/Ngaq.Server.git  Ngaq.Server
-git submodule add  https://github.com/Tsinswreng/Ngaq.Test.git  Ngaq.Test
+git submodule add  https://github.com/Tsinswreng/Ngan.Dict.Core.git  Ngan.Dict.Core
+git submodule add  https://github.com/Tsinswreng/Ngan.Dict.Backend.git  Ngan.Dict.Backend
+git submodule add  https://github.com/Tsinswreng/Ngan.Dict.Frontend.git  Ngan.Dict.Frontend
+git submodule add  https://github.com/Tsinswreng/Ngan.Dict.Server.git  Ngan.Dict.Server
+git submodule add  https://github.com/Tsinswreng/Ngan.Dict.Test.git  Ngan.Dict.Test
 
 git submodule add  https://github.com/Tsinswreng/CsTypeAlias.git  Tsinswreng.CsTypeAlias
 git submodule add  https://github.com/Tsinswreng/CsTools.git  Tsinswreng.CsTools

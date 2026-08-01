@@ -11,7 +11,7 @@
 		
 		在測試用例中能直接拿到上面那些東西。
 		現在還有一個試驗中的前端測試程序集
-		`E:\_code\CsNgaq\Ngaq.Test\proj\Ngaq.Windows.Test\Ngaq.Windows.Test.cs`。
+		`E:\_code\CsNgan.Dict\Ngan.Dict.Test\proj\Ngan.Dict.Windows.Test\Ngan.Dict.Windows.Test.cs`。
 		
 		
 		
@@ -21,9 +21,9 @@
 
 目前发现一个必须先确认的设计分叉：
 
-- [Ngaq.Windows.Test.cs](/E:/_code/CsNgaq/Ngaq.Test/proj/Ngaq.Windows.Test/Ngaq.Windows.Test.cs) 目前没有引用 `Ngaq.Ui`，也没有启动 Avalonia UI 线程。
-- 仓库已有 [Ngaq.Ui.Test](/E:/_code/CsNgaq/Ngaq.Test/proj/Ngaq.Ui.Test/Ngaq.Ui.Test.csproj) 和 [Ngaq.Ui.Windows.Test](/E:/_code/CsNgaq/Ngaq.Test/proj/Ngaq.Ui.Windows.Test/Ngaq.Ui.Windows.Test.csproj)，但它们采用已废弃的 `IViewXxx` 方案。
-- [Ngaq.Ui.Windows.Test/Program.cs](/E:/_code/CsNgaq/Ngaq.Test/proj/Ngaq.Ui.Windows.Test/Program.cs:37) 已经实现了 Avalonia 宿主和 UI 线程启动。这部分基础设施仍有价值，只是测试抽象需要废弃。
+- [Ngan.Dict.Windows.Test.cs](/E:/_code/CsNgan.Dict/Ngan.Dict.Test/proj/Ngan.Dict.Windows.Test/Ngan.Dict.Windows.Test.cs) 目前没有引用 `Ngan.Dict.Ui`，也没有启动 Avalonia UI 线程。
+- 仓库已有 [Ngan.Dict.Ui.Test](/E:/_code/CsNgan.Dict/Ngan.Dict.Test/proj/Ngan.Dict.Ui.Test/Ngan.Dict.Ui.Test.csproj) 和 [Ngan.Dict.Ui.Windows.Test](/E:/_code/CsNgan.Dict/Ngan.Dict.Test/proj/Ngan.Dict.Ui.Windows.Test/Ngan.Dict.Ui.Windows.Test.csproj)，但它们采用已废弃的 `IViewXxx` 方案。
+- [Ngan.Dict.Ui.Windows.Test/Program.cs](/E:/_code/CsNgan.Dict/Ngan.Dict.Test/proj/Ngan.Dict.Ui.Windows.Test/Program.cs:37) 已经实现了 Avalonia 宿主和 UI 线程启动。这部分基础设施仍有价值，只是测试抽象需要废弃。
 
 我初步建议的新测试方式：
 
@@ -41,7 +41,7 @@
 
 有三个问题需要你裁定，我不能带着这些疑问继续设计：
 
-1. 新前端测试最终放在哪里？是把 `Ngaq.Ui.Test`、`Ngaq.Ui.Windows.Test` 废弃并将功能并入你指出的 `Ngaq.Windows.Test`，还是保留这两个程序集，只删除 `IViewXxx` 做法？
+1. 新前端测试最终放在哪里？是把 `Ngan.Dict.Ui.Test`、`Ngan.Dict.Ui.Windows.Test` 废弃并将功能并入你指出的 `Ngan.Dict.Windows.Test`，还是保留这两个程序集，只删除 `IViewXxx` 做法？
 2. 自动测试目标是否包含真实控件点击、绑定和 Dispatcher 行为，还是第一阶段只测 View 构造、公开控件及 Converter？
 3. 是否要求测试能在 CI 无桌面环境运行？如果要求，我会研究 `Avalonia.Headless`；如果只需 Windows 本机及 AOT 执行，可以沿用当前 Desktop 宿主。
 ````
@@ -126,7 +126,7 @@
 
 点击完成的问题不应靠观察 UI，也不应主要靠轮询。真正可靠的完成条件应当是：**按钮保存并公开本次业务操作返回的 `Task`。**
 
-当前 [ToolBtn.cs](/E:/_code/CsNgaq/Ngaq.Frontend/proj/Ngaq.Ui/Tools/ToolBtn.cs:31) 的 `ClickAndWaitDone` 是轮询 `OpBtn.State`；而 [OpBtn.cs](/E:/_code/CsNgaq/Ngaq.Frontend/proj/Ngaq.Ui/Infra/Ctrls/OpBtn.cs:78) 取得业务 `Task` 后，只挂了 `ContinueWith`，没有把 Task 暴露出来。因此目前确实不够稳。
+当前 [ToolBtn.cs](/E:/_code/CsNgan.Dict/Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/Tools/ToolBtn.cs:31) 的 `ClickAndWaitDone` 是轮询 `OpBtn.State`；而 [OpBtn.cs](/E:/_code/CsNgan.Dict/Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/Infra/Ctrls/OpBtn.cs:78) 取得业务 `Task` 后，只挂了 `ContinueWith`，没有把 Task 暴露出来。因此目前确实不够稳。
 
 建议把语义设计为：
 

@@ -8,10 +8,10 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Include='$(MSBuildThisFileDirectory)TypeAlias.cs' />
-		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Ngaq.Core\Ngaq.Core.csproj' />
-		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Ngaq.Frontend\proj\Ngaq.Ui\Ngaq.Ui.csproj' />
-		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Ngaq.Frontend\proj\Ngaq.Windows\Ngaq.Windows.csproj' />
-		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Ngaq.Server\proj\Ngaq.Server.Http\Ngaq.Server.Http.csproj' />
+		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Ngan.Dict.Core\Ngan.Dict.Core.csproj' />
+		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Ngan.Dict.Ui.csproj' />
+		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Ngan.Dict.Frontend\proj\Ngan.Dict.Windows\Ngan.Dict.Windows.csproj' />
+		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Ngan.Dict.Server\proj\Ngan.Dict.Server.Http\Ngan.Dict.Server.Http.csproj' />
 		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Thesis\proj\Thesis\Thesis.csproj' />
 		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Tsinswreng.Avln.StrokeText\proj\Tsinswreng.Avln.StrokeText\Tsinswreng.Avln.StrokeText.csproj' />
 		<ProjectReference Include='$(MSBuildThisFileDirectory)..\..\Tsinswreng.AvlnTools\proj\Tsinswreng.AvlnTools\Tsinswreng.AvlnTools.csproj' />

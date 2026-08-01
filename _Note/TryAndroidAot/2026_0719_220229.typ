@@ -1,8 +1,8 @@
 -Sesn[
 	-T[2026_0719_220238][
 		先看skill。
-		看`E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Android\Ngaq.Android.csproj`
-		`E:\_code\CsNgaq\PublishAndroid.sh`
+		看`E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Android\Ngan.Dict.Android.csproj`
+		`E:\_code\CsNgan.Dict\PublishAndroid.sh`
 		這個本來不加`<PublishAot>true</PublishAot>`
 		在windows上用github執行 `PublishAndroid.sh`就能成功編譯出apk。
 		加了PublishAot 就報錯 
@@ -19,7 +19,7 @@
     ld.lld : error undefined symbol: std::__ndk1::to_chars(char*, char*, __float128, std::__ndk1::chars_format)
     ld.lld : error undefined symbol: std::__ndk1::to_chars(char*, char*, __float128)
     clang : error linker command failed with exit code 1 (use -v to see invocation)
-    C:\Users\lenovo\.nuget\packages\microsoft.dotnet.ilcompiler\10.0.1\build\Microsoft.NETCore.Native.targets(389,5): error MSB3073: 命令“"clang" "obj\Release\net10.0-android\android-x64\native\Ngaq.Android.
+    C:\Users\lenovo\.nuget\packages\microsoft.dotnet.ilcompiler\10.0.1\build\Microsoft.NETCore.Native.targets(389,5): error MSB3073: 命令“"clang" "obj\Release\net10.0-android\android-x64\native\Ngan.Dict.Android.
 		.....
 		t10.0-android\android-x64\android\environment.x86_64.o -Wl,--discard-all -Wl,--gc-sections”已退出，代码为 1。
 		````
@@ -34,9 +34,9 @@
 		把apk從wsl移到/mnt/裏的windows目錄再用windows的adb來裝。
 		原先我的手機上已經裝了一個coreclr版的 同版本的。此時直接adb install會報錯
 ````
-PS C:\Users\lenovo> adb install "E:\Tsinswreng.Ngaq-Signed.apk"
+PS C:\Users\lenovo> adb install "E:\Tsinswreng.Ngan.Dict-Signed.apk"
 Performing Streamed Install
-adb: failed to install E:\Tsinswreng.Ngaq-Signed.apk: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package Tsinswreng.Ngaq signatures do not match newer version; ignoring!]
+adb: failed to install E:\Tsinswreng.Ngan.Dict-Signed.apk: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package Tsinswreng.Ngan.Dict signatures do not match newer version; ignoring!]
 ````
 	然後我把原來手機上的卸載掉了、再安裝。能安裝成功。但是啓動時就卡在啓動頁面不動了、
 	也沒有報無響應啥的、他就是一直卡着不動。
@@ -44,7 +44,7 @@ adb: failed to install E:\Tsinswreng.Ngaq-Signed.apk: Failure [INSTALL_FAILED_UP
 	coreclr版 首次安裝 啓動的時候會請求一個通知權限。
 	
 	以上就是我收集到的信息。
-	現在我在手機上把Ngaq卸載了。
+	現在我在手機上把Ngan.Dict卸載了。
 	你自己裝一次試試。然後自己看adb的日誌、看看是甚麼原因。
 	自己收集信息debug 別亂猜
 
@@ -64,14 +64,14 @@ Android.Runtime.JNINativeWrapper.CreateDelegate
 → Avalonia.Android.AvaloniaAccessHelper
 → Avalonia.Android.AvaloniaView
 → Avalonia.Android.AvaloniaActivity.OnCreate
-→ Ngaq.Android.MainActivity.OnCreate
+→ Ngan.Dict.Android.MainActivity.OnCreate
 ```
 
-具体发生在 [MainActivity.cs](E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Android\MainActivity.cs:61) 调用 `base.OnCreate()`，Avalonia 创建 Android View 及无障碍辅助对象时。
+具体发生在 [MainActivity.cs](E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Android\MainActivity.cs:61) 调用 `base.OnCreate()`，Avalonia 创建 Android View 及无障碍辅助对象时。
 
 根因是：
 
-- 项目使用 `Avalonia.Android 11.3.8`，见 [Directory.Packages.props](E:\_code\CsNgaq\Ngaq.Frontend\proj\Directory.Packages.props:25)。
+- 项目使用 `Avalonia.Android 11.3.8`，见 [Directory.Packages.props](E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Directory.Packages.props:25)。
 - `AvaloniaAccessHelper` 会创建 AndroidX `ExploreByTouchHelper`。
 - AndroidX JNI 绑定需要注册 native callback。
 - 当前 NativeAOT 构建没有预生成 marshal methods，因此回退到 `JNINativeWrapper.CreateDelegate()`。
@@ -109,7 +109,7 @@ in assembly Mono.Android not found
 
 其他现象也解释通了：
 
-- 没弹通知权限，是因为程序在 `base.OnCreate()` 内就崩溃了，尚未执行 [MainActivity.cs](E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Android\MainActivity.cs:62) 的通知初始化。
+- 没弹通知权限，是因为程序在 `base.OnCreate()` 内就崩溃了，尚未执行 [MainActivity.cs](E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Android\MainActivity.cs:62) 的通知初始化。
 - 启动页一直保留，是因为 NativeAOT 异常传播又遇到：
 
 ```text
@@ -127,7 +127,7 @@ No implementation found for mono.android.Runtime.propagateUncaughtException
 2. 修改或 fork Avalonia Android，NativeAOT 下禁用/替换 `AvaloniaAccessHelper` 无障碍实现。
 3. Android 暂时继续使用 CoreCLR，等待上游 NativeAOT 支持成熟。
 
-我没有修改代码。NativeAOT APK 当前仍安装在手机上，进程也仍残留；如需要我可以先卸载，然后继续调查方案 1 或方案 2。另一个需要同步的事项是 [AndroidNativeAotTrial.typ](E:\_code\CsNgaq\_Note\TryAndroidAot\AndroidNativeAotTrial.typ:1) 现在缺少这次真机运行失败的结论。
+我没有修改代码。NativeAOT APK 当前仍安装在手机上，进程也仍残留；如需要我可以先卸载，然后继续调查方案 1 或方案 2。另一个需要同步的事项是 [AndroidNativeAotTrial.typ](E:\_code\CsNgan.Dict\_Note\TryAndroidAot\AndroidNativeAotTrial.typ:1) 现在缺少这次真机运行失败的结论。
 ````
 	]
 	
@@ -159,7 +159,7 @@ No implementation found for mono.android.Runtime.propagateUncaughtException
 
 Avalonia 12 仍然使用 `ExploreByTouchHelper`，但 AndroidX binding 已經升級：
 
-- Ngaq/Avalonia 11：`Xamarin.AndroidX.CustomView 1.1.0.20`
+- Ngan.Dict/Avalonia 11：`Xamarin.AndroidX.CustomView 1.1.0.20`
 - Avalonia 12.1 測試：`Xamarin.AndroidX.CustomView 1.2.0.3`
 - Avalonia 12.1 測試：`Xamarin.AndroidX.Core 1.17.0.2`
 
@@ -173,12 +173,12 @@ Avalonia 12 仍然使用 `ExploreByTouchHelper`，但 AndroidX binding 已經升
 
 請把手機解鎖並保持螢幕亮着，告訴我一聲，我再完成最後的畫面、控件和交互驗證。
 
-現有 Ngaq 項目的 Avalonia 版本沒有修改。
+現有 Ngan.Dict 項目的 Avalonia 版本沒有修改。
 ````
 	]
 	
 	-T[2026_0721_202202][
-		出一份文檔、寫到這裏來`E:\_code\CsNgaq\_Note\TryAndroidAot\Avln12NativeAot.typ`
+		出一份文檔、寫到這裏來`E:\_code\CsNgan.Dict\_Note\TryAndroidAot\Avln12NativeAot.typ`
 	][
 		
 	]

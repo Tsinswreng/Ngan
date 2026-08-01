@@ -32,7 +32,7 @@ Internet	celebration; cheering; delight \
 Format: [[key|value]]
 For example, the line below adds the tag 'my custom tag' to this word] \
 [[tag|my custom tag]] \
-//# for more keys, see Ngaq.Core/Word/Models/Po/Kv/ConstPropKey.cs \
+//# for more keys, see Ngan.Dict.Core/Word/Models/Po/Kv/ConstPropKey.cs \
 #Delimiter \
 fervent \
 US: [ˈfɜrv(ə)nt] \

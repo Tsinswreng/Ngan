@@ -2,7 +2,7 @@
 #let H = auto-heading;
 #H[序列化][
 	#H[Json][
-		- 依賴注入 `Ngaq.Core/Tools/Json/IJsonSerializer.cs` (優先)
+		- 依賴注入 `Ngan.Dict.Core/Tools/Json/IJsonSerializer.cs` (優先)
 		- 或用 `AppJsonSerializer.Inst.Parse()` 等(不優先考慮)
 
 			#H[Json與`IDict<str, obj?>`互轉][
@@ -16,7 +16,7 @@
 ]
 
 #H[支持序列化和反序列化的對象][
-	實現了 `Ngaq.Core.Infra.IF.IAppSerializable` 接口的 class
+	實現了 `Ngan.Dict.Core.Infra.IF.IAppSerializable` 接口的 class
 	纔能序列化和反序列化。
 	
 	實現此接口後 會自動註冊
@@ -29,7 +29,7 @@
 	
 	json序列化使用標準庫內置、依賴源生成器。
 	但是此項目中 實現了 `IAppSerializable` 接口的類 不會使源生成器自動生成代碼、
-	需要cd到 `Ngaq.Core`下 執行 `sh GenAppJsonCtx.sh`
+	需要cd到 `Ngan.Dict.Core`下 執行 `sh GenAppJsonCtx.sh`
 ]
 
 #H[Json 與 `IDict<str, obj?>`互轉][
@@ -42,7 +42,7 @@
 ]
 
 #H[對象和 `IDict<str, obj?>`互轉][
-	注入 Ngaq.Core.Tools.Json 下的 
+	注入 Ngan.Dict.Core.Tools.Json 下的 
 	IDictJsonSerializer
 	
 	或使用 AppJsonSerializer.Inst

@@ -99,9 +99,9 @@ _	3F	63	111111
 =
 [2025-05-24T19:15:09.864+08:00_W21-6]
 ```bash
-// adb install --no-streaming ./bin/Debug/net9.0-android/com.Tsinswreng.Ngaq-Signed.apk
+// adb install --no-streaming ./bin/Debug/net9.0-android/com.Tsinswreng.Ngan.Dict-Signed.apk
 
-// adb push ./bin/Debug/net9.0-android/com.Tsinswreng.Ngaq-Signed.apk /sdcard/_/a.apk
+// adb push ./bin/Debug/net9.0-android/com.Tsinswreng.Ngan.Dict-Signed.apk /sdcard/_/a.apk
 // adb shell pm install /sdcard/_/a.apk
 
 
@@ -168,12 +168,12 @@ public partial class MainView : UserControl {
 =
 [2025-07-09T15:04:11.549+08:00_W28-3]
 ```bash
-docker volume create ngaq-postgres-data
+docker volume create ngan.dict-postgres-data
 docker run \
-	--name ngaq-postgres \
+	--name ngan.dict-postgres \
 	-e POSTGRES_PASSWORD=Tsinswreng \
 	-p 5432:5432 \
-	-v ngaq-postgres-data:/var/lib/postgresql/data \
+	-v ngan.dict-postgres-data:/var/lib/postgresql/data \
 	-d postgres
 
 ```
@@ -182,11 +182,11 @@ docker run \
 [2025-07-12T10:40:20.107+08:00_W28-6]
 //docker pull redis
 ```bash
-docker volume create ngaq-redis-data
+docker volume create ngan.dict-redis-data
 docker run \
-	--name ngaq-redis \
+	--name ngan.dict-redis \
 	-p 6379:6379 \
 	# Redis 默认数据目录是 /data \
-	-v ngaq-redis-data:/data \
+	-v ngan.dict-redis-data:/data \
 	-d redis
 ```

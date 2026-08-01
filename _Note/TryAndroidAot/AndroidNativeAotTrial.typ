@@ -1,32 +1,32 @@
 = Android NativeAOT 試驗記錄
 
-本文記錄 Ngaq Android 項目在 `.NET 10` 下啓用 `PublishAot` 的調查、環境配置、故障定位及最終成功流程。
+本文記錄 Ngan.Dict Android 項目在 `.NET 10` 下啓用 `PublishAot` 的調查、環境配置、故障定位及最終成功流程。
 
 記錄日期：2026-07-19 至 2026-07-20。
 
 涉及文件：
 
-- `E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Android\Ngaq.Android.csproj`
-- `E:\_code\CsNgaq\PublishAndroid.sh`
+- `E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Android\Ngan.Dict.Android.csproj`
+- `E:\_code\CsNgan.Dict\PublishAndroid.sh`
 
 == 最終結論
 
-`Ngaq.Android` 可以啓用 Android NativeAOT，但目前驗證成功的可靠流程是在 Linux 環境中發布。
+`Ngan.Dict.Android` 可以啓用 Android NativeAOT，但目前驗證成功的可靠流程是在 Linux 環境中發布。
 
 本次最終在 WSL2 Ubuntu 中成功完成了單一 `android-arm64` 的 NativeAOT 編譯、Android 資源處理、APK 打包和簽名，`dotnet publish` 的退出碼爲 `0`。
 
 成功產物：
 
 ```text
-\\wsl.localhost\Ubuntu-20.04\home\tsinswreng\ngaq-android-linux-build-clean\artifacts\publish\Ngaq.Android\release_android-arm64\Tsinswreng.Ngaq-Signed.apk
+\\wsl.localhost\Ubuntu-20.04\home\tsinswreng\ngan.dict-android-linux-build-clean\artifacts\publish\Ngan.Dict.Android\release_android-arm64\Tsinswreng.Ngan.Dict-Signed.apk
 ```
 
 產物信息：
 
 - APK 大小：`38,388,009` 字節。
 - APK 中包含的 ABI：`arm64-v8a`。
-- NativeAOT 生成的 `Ngaq.Android.o` 大小：`334,294,933` 字節。
-- 最終 `Ngaq.Android.so` 大小：`69,178,176` 字節。
+- NativeAOT 生成的 `Ngan.Dict.Android.o` 大小：`334,294,933` 字節。
+- 最終 `Ngan.Dict.Android.so` 大小：`69,178,176` 字節。
 - APK v1、v2、v3 簽名驗證通過。
 - 當前使用 Android Debug 證書簽名，不是正式發布證書。
 
@@ -68,7 +68,7 @@ clang : error linker command failed with exit code 1
 
 == 項目中的 AOT 配置
 
-調查時 `Ngaq.Android.csproj` 中相關配置爲：
+調查時 `Ngan.Dict.Android.csproj` 中相關配置爲：
 
 ```xml
 <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
@@ -154,7 +154,7 @@ Android NDK: D:\ENV\Android\Sdk\ndk\23.2.8568313\
 在 Windows 上臨時指定 NDK 28：
 
 ```powershell
-dotnet publish .\Ngaq.Frontend\proj\Ngaq.Android\Ngaq.Android.csproj `
+dotnet publish .\Ngan.Dict.Frontend\proj\Ngan.Dict.Android\Ngan.Dict.Android.csproj `
   -c Release `
   -r android-x64 `
   -p:AllowMissingPrunePackageData=true `
@@ -172,20 +172,20 @@ dotnet publish .\Ngaq.Frontend\proj\Ngaq.Android\Ngaq.Android.csproj `
 兩個 RID 的原生庫能分別生成在：
 
 ```text
-bin\Release\net10.0-android\android-arm64\native\Ngaq.Android.so
-bin\Release\net10.0-android\android-x64\native\Ngaq.Android.so
+bin\Release\net10.0-android\android-arm64\native\Ngan.Dict.Android.so
+bin\Release\net10.0-android\android-x64\native\Ngan.Dict.Android.so
 ```
 
 但外層 publish 又嘗試複製不存在的無 RID 文件：
 
 ```text
-bin\Release\net10.0-android\native\Ngaq.Android.so
+bin\Release\net10.0-android\native\Ngan.Dict.Android.so
 ```
 
 最後報錯：
 
 ```text
-MSB3030: 無法複製文件“bin\Release\net10.0-android\native\Ngaq.Android.so”，
+MSB3030: 無法複製文件“bin\Release\net10.0-android\native\Ngan.Dict.Android.so”，
 原因是找不到該文件。
 ```
 
@@ -389,7 +389,7 @@ kernel 6.18.33.2-2
 實際遇到的損壞文件：
 
 ```text
-/home/tsinswreng/ngaq-android-linux-build/artifacts/obj/Ngaq.Android/
+/home/tsinswreng/ngan.dict-android-linux-build/artifacts/obj/Ngan.Dict.Android/
 release_android-arm64/lp/130/jl/flat/values_string.arsc.flat
 ```
 
@@ -405,7 +405,7 @@ APT2066: failed parsing overlays
 最終成功時沒有直接刪除舊 artifacts，而是使用全新的目錄：
 
 ```text
-/home/tsinswreng/ngaq-android-linux-build-clean/artifacts
+/home/tsinswreng/ngan.dict-android-linux-build-clean/artifacts
 ```
 
 這證明 NativeAOT 和 AAPT2 構建應避免混用 Windows 與 Linux 的中間輸出。
@@ -415,12 +415,12 @@ APT2066: failed parsing overlays
 在 WSL 中執行：
 
 ```bash
-cd /mnt/e/_code/CsNgaq/Ngaq.Frontend/proj/Ngaq.Android
+cd /mnt/e/_code/CsNgan.Dict/Ngan.Dict.Frontend/proj/Ngan.Dict.Android
 
-dotnet publish Ngaq.Android.csproj \
+dotnet publish Ngan.Dict.Android.csproj \
   -c Release \
   -r android-arm64 \
-  --artifacts-path /home/tsinswreng/ngaq-android-linux-build-clean/artifacts \
+  --artifacts-path /home/tsinswreng/ngan.dict-android-linux-build-clean/artifacts \
   -p:AllowMissingPrunePackageData=true \
   -p:AndroidSdkDirectory=/home/tsinswreng/Android/Sdk \
   -p:AndroidNdkDirectory=/mnt/d/ENV/_wsl/android-ndk-r27c \
@@ -442,16 +442,16 @@ dotnet publish Ngaq.Android.csproj \
 成功產物目錄：
 
 ```text
-/home/tsinswreng/ngaq-android-linux-build-clean/artifacts/publish/
-Ngaq.Android/release_android-arm64/
+/home/tsinswreng/ngan.dict-android-linux-build-clean/artifacts/publish/
+Ngan.Dict.Android/release_android-arm64/
 ```
 
 其中包含：
 
 ```text
-Tsinswreng.Ngaq-Signed.apk
-Tsinswreng.Ngaq.apk
-Ngaq.Android.so
+Tsinswreng.Ngan.Dict-Signed.apk
+Tsinswreng.Ngan.Dict.apk
+Ngan.Dict.Android.so
 ```
 
 == APK 驗證
@@ -460,7 +460,7 @@ Ngaq.Android.so
 
 ```bash
 SDK="$HOME/Android/Sdk"
-APK="$HOME/ngaq-android-linux-build-clean/artifacts/publish/Ngaq.Android/release_android-arm64/Tsinswreng.Ngaq-Signed.apk"
+APK="$HOME/ngan.dict-android-linux-build-clean/artifacts/publish/Ngan.Dict.Android/release_android-arm64/Tsinswreng.Ngan.Dict-Signed.apk"
 
 "$SDK/build-tools/36.0.0/apksigner" \
   verify --verbose --print-certs "$APK"
@@ -520,7 +520,7 @@ Applications should use the generic JsonStringEnumConverter<TEnum> instead.
 涉及：
 
 ```text
-Ngaq.Core.Infra.AppJsonCtx..cctor()
+Ngan.Dict.Core.Infra.AppJsonCtx..cctor()
 ```
 
 這不是本次 APK 生成的阻止性錯誤，但可能在運行時破壞相關 enum JSON 序列化功能。
@@ -562,7 +562,7 @@ arm64-v8a
 
 === 正式簽名
 
-當前 `Tsinswreng.Ngaq-Signed.apk` 使用的是 Android Debug 證書。
+當前 `Tsinswreng.Ngan.Dict-Signed.apk` 使用的是 Android Debug 證書。
 
 正式發布需要配置自己的 keystore、alias 和密碼，不能直接把本次 Debug-signed APK 當作商店或正式分發產物。
 
@@ -570,7 +570,7 @@ arm64-v8a
 
 本次只完成調查和手動驗證，沒有修改：
 
-- `Ngaq.Android.csproj`
+- `Ngan.Dict.Android.csproj`
 - `PublishAndroid.sh`
 
 後續如果要固化流程，腳本至少應處理：

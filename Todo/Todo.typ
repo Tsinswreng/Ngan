@@ -100,7 +100,7 @@ System.InvalidOperationException: This SqliteTransaction has completed; it is no
 WinGlobalKey AOT下啓動後 無法顯程序主界面
 ]
 
-#H[E:\_code\CsNgaq\Ngaq.Test\proj\Ngaq.Backend.Test\Domains\Word\SvcWordV2\TestISvcWordV2.BatAddNewWordToLearn.cs][
+#H[E:\_code\CsNgan.Dict\Ngan.Dict.Test\proj\Ngan.Dict.Backend.Test\Domains\Word\SvcWordV2\TestISvcWordV2.BatAddNewWordToLearn.cs][
 	補測試用例。
 	
 ]
@@ -130,7 +130,7 @@ WinGlobalKey AOT下啓動後 無法顯程序主界面
 #H[優化大模型詞典 用戶提示詞處理][
 	[2026_0411_160324,]
 ```
-File: e:\_code\CsNgaq\Ngaq.Backend\Domains\Dictionary\Svc\SvcDictionary.cs
+File: e:\_code\CsNgan.Dict\Ngan.Dict.Backend\Domains\Dictionary\Svc\SvcDictionary.cs
 150: 		var userPrompt = BuildUserPrompt(Req);
 
 ```
@@ -162,8 +162,8 @@ File: e:\_code\CsNgaq\Ngaq.Backend\Domains\Dictionary\Svc\SvcDictionary.cs
 
 #H[android 綁定 回退鍵][
 	[2026_0427_214253]
-	E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Android\MainActivity.cs
-	File: e:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\MainView.cs
+	E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Android\MainActivity.cs
+	File: e:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\MainView.cs
 327: 						MgrViewNavi.Inst.GetViewNavi().Back();
 
 ]

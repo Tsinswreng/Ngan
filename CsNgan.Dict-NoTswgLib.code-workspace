@@ -1,0 +1,25 @@
+// 此工作區排除 Tsinswreng.* 之自研庫、專用于智能體開發Ngan.Dictˉ主業務項目
+// 使智能體讀不到自研庫源碼
+{
+	"folders": [
+		{
+			"name": "CsNgan.Dict",
+			"path": "."
+		}
+	],
+	"settings": {
+		"csharp.format.enable": false,
+		"[csharp]": {
+			"editor.maxTokenizationLineLength": 2500,
+			"editor.formatOnType": false,
+			"editor.formatOnPaste": false,
+			"editor.formatOnSave": false,
+			"editor.defaultFormatter": null
+		},
+		"omnisharp.useEditorFormattingSettings": false,
+		"files.exclude": {
+			"Tsinswreng.*/": true
+		}
+		
+	}
+}

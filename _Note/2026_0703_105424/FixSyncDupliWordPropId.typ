@@ -1,42 +1,42 @@
 先看 skill
 單詞同步這遇到了個bug
 
-在`E:\_code\CsNgaq\tmp`下面
+在`E:\_code\CsNgan.Dict\tmp`下面
 
 有
 
-Ngaq.sqlite_FromAndroid (sqlite數據庫)
+Ngan.Dict.sqlite_FromAndroid (sqlite數據庫)
 
-2026_0703_005840.ngaq (Windows端輸出的單詞包)
+2026_0703_005840.ngan.dict (Windows端輸出的單詞包)
 
-當我的程序用的數據庫是 Ngaq.sqlite_FromAndroid 時
-我在單詞同步頁面中選擇 2026_0703_005840.ngaq 來合入
+當我的程序用的數據庫是 Ngan.Dict.sqlite_FromAndroid 時
+我在單詞同步頁面中選擇 2026_0703_005840.ngan.dict 來合入
 就會報錯 WordProp.Id違反唯一約束
 
 還有一個
 
-Ngaq.sqlite_FromWin
+Ngan.Dict.sqlite_FromWin
 
 這個文件是
 運行新程序實例 單詞庫中沒有數據時、在單詞同步頁面從
-2026_0703_005840.ngaq
+2026_0703_005840.ngan.dict
 合入 得到的sqlite數據庫文件
 
-也就是說 Ngaq.sqlite_FromWin 的內容 和 2026_0703_005840.ngaq 理論上是等同的。
+也就是說 Ngan.Dict.sqlite_FromWin 的內容 和 2026_0703_005840.ngan.dict 理論上是等同的。
 
 你覺得怎麼debug比較好?
 
 我的想法是
 你去另外建一個測試程序集
-仿照 E:\_code\CsNgaq\Ngaq.Test\proj\Ngaq.Windows.Test\Ngaq.Windows.Test.csproj
-然後連上 Ngaq.sqlite_FromAndroid
+仿照 E:\_code\CsNgan.Dict\Ngan.Dict.Test\proj\Ngan.Dict.Windows.Test\Ngan.Dict.Windows.Test.csproj
+然後連上 Ngan.Dict.sqlite_FromAndroid
 然後注入ISvcWordV2服務、調裏面的單詞同步接口
 在代碼中加日誌
 中間你可以嘗試多次運行 自己看日誌輸出
 
 你覺得呢
 
-注意:  不得修改`E:\_code\CsNgaq\tmp/`下面的文件
+注意:  不得修改`E:\_code\CsNgan.Dict\tmp/`下面的文件
 當他們是只讀的、debug要被改到的時候起碼要複製一份
 
 
@@ -67,18 +67,18 @@ DB路徑不是在配置文件裏寫的嗎  哪裏硬編碼了
 
 你這次的報錯，實際落點不在 `LocalNotExist`，而是在 V2 同步這條鏈路：
 
-[SvcWordV2.Sync.cs](/E:/_code/CsNgaq/Ngaq.Backend/Domains/Word/Svc/SvcWordV2.Sync.cs:208)  
+[SvcWordV2.Sync.cs](/E:/_code/CsNgan.Dict/Ngan.Dict.Backend/Domains/Word/Svc/SvcWordV2.Sync.cs:208)  
 `ApplyRemoteWordsAsBatchUpdate()`  
 → `RepoProp.BatUpsert(...)`
 
 再往下進 repo：
 
-[SqlRepo.cs](/E:/_code/CsNgaq/Tsinswreng.CsSql/proj/Tsinswreng.CsSql/SqlRepo.cs:1152)  
+[SqlRepo.cs](/E:/_code/CsNgan.Dict/Tsinswreng.CsSql/proj/Tsinswreng.CsSql/SqlRepo.cs:1152)  
 `BatUpsert()` 先判斷每個 Id “存不存在”，存在就 `BatUpd`，不存在就 `BatAdd`。
 
 問題在這個“存不存在”的判斷用的是：
 
-[SqlRepo.cs](/E:/_code/CsNgaq/Tsinswreng.CsSql/proj/Tsinswreng.CsSql/SqlRepo.cs:1143)  
+[SqlRepo.cs](/E:/_code/CsNgan.Dict/Tsinswreng.CsSql/proj/Tsinswreng.CsSql/SqlRepo.cs:1143)  
 `BatExistsById()`
 
 它查詢時自帶了“只看未軟刪”的過濾。  
@@ -145,7 +145,7 @@ DB路徑不是在配置文件裏寫的嗎  哪裏硬編碼了
   - 對“遠端 Id 命中本地軟刪行”的情況先做 revive / hard delete / 改 Id 之類的定向處理
 - 這樣可以不碰 shared repo，但會更繞，且本質上是在業務層補 repo 層的洞。
 
-還有一點我需要坦白說明：我剛纔已經先在 [SqlRepo.cs](/E:/_code/CsNgaq/Tsinswreng.CsSql/proj/Tsinswreng.CsSql/SqlRepo.cs) 打了一個本地 patch，目的是驗證這個判斷是否真是根因；在你提醒後我就停住了，還沒繼續擴大修改，也還沒做最終回歸結論。  
+還有一點我需要坦白說明：我剛纔已經先在 [SqlRepo.cs](/E:/_code/CsNgan.Dict/Tsinswreng.CsSql/proj/Tsinswreng.CsSql/SqlRepo.cs) 打了一個本地 patch，目的是驗證這個判斷是否真是根因；在你提醒後我就停住了，還沒繼續擴大修改，也還沒做最終回歸結論。  
 如果你不想動 shared repo，我下一步可以把那個 patch 撤掉，改走純 `SvcWordV2` 方案。
 
 你只要拍板一件事就行：

@@ -305,7 +305,7 @@
       "DictionaryLookupHotkeyModifiers_": "字典查询快捷键修饰键(例如 Alt 或 Ctrl|Shift 等)",
       "DictionaryLookupHotkeyKey": "字典查询快捷键",
       "WordEditorOpenerNotReady": "单词编辑器开启器尚未就绪",
-      "NgaqDictionaryLookup": "词典查询",
+      "Ngan.DictDictionaryLookup": "词典查询",
       "TapReadClipboardAndAutoLookup": "点击以读取剪贴板并自动查询",
       "WeightAlgorithmPluginDoc": "权重算法插件开发文档",
       "TakeEffectAfterTheProgramIsRestarted": "在程序重启后生效"

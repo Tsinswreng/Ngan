@@ -289,7 +289,7 @@
       "DictionaryLookupHotkeyModifiers_": "辞書引きホットキーの修飾キー",
       "DictionaryLookupHotkeyKey": "辞書引きホットキーのキー",
       "WordEditorOpenerNotReady": "単語エディタオープナーが準備できていません",
-      "NgaqDictionaryLookup": "辞書引き",
+      "Ngan.DictDictionaryLookup": "辞書引き",
       "TapReadClipboardAndAutoLookup": "タップしてクリップボードを読み取り自動検索",
       "WeightAlgorithmPluginDoc": "重みアルゴリズムプラグイン開発ドキュメント",
       "TakeEffectAfterTheProgramIsRestarted": "プログラムの再起動後に有効になります",

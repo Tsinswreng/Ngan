@@ -67,7 +67,7 @@ description: 編寫C\#代碼
 	在 .agents/skills/下
 	
 	有
-	#H[ngaq-code-doc][
+	#H[ngan-dict-code-doc][
 		業務代碼文檔介紹
 	]
 ]
@@ -75,7 +75,7 @@ description: 編寫C\#代碼
 #H[寫代碼前該看哪些文件][
 *Common.typ是必看項*
 
-ngaq-code-doc 也看、知道在哪裏找文檔
+ngan-dict-code-doc 也看、知道在哪裏找文檔
 
 根據當前分配的任務、看看要用哪些skill
 
@@ -88,7 +88,7 @@ ngaq-code-doc 也看、知道在哪裏找文檔
 ]
 
 #H[寫完代碼之後做甚麼][
-	按 ngaq-code-doc 的規範 更新文檔
+	按 ngan-dict-code-doc 的規範 更新文檔
 	*除非用戶明確要求、不要給我跑編譯！*節約token
 ]
 

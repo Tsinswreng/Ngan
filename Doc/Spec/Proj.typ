@@ -12,7 +12,7 @@
 
 #H[程序集][
 	csproj即程序集。
-	#H[Ngaq.Core][
+	#H[Ngan.Dict.Core][
 		核心程序集
 		- 要求平臺無關(包含Web)
 		包含:
@@ -40,7 +40,7 @@
 		]
 	]
 
-	#H[Ngaq.Backend][
+	#H[Ngan.Dict.Backend][
 		後端基礎程序集。 主要負責數據庫IO 等
 
 		本地服務端 與 Web服務端 通用的代碼都被這裏。
@@ -51,16 +51,16 @@
 		- 當 隨Web服務端一起編譯時 連接的數據庫是Pg
 	]
 
-	#H[Ngaq.Frontend][
+	#H[Ngan.Dict.Frontend][
 		前端文件夾。Avalonia項目。不是一個單獨的程序集。
 
 		其proj/下有多個程序集。
-		#H[Ngaq.UI][
+		#H[Ngan.Dict.UI][
 			此程序集同樣要求平臺無關。使用MVVM模式。
 			- 包含UI, 交互邏輯 等
 			- 此程序集引用程序集:
-				- Ngaq.Core 
-				- Ngaq.Client
+				- Ngan.Dict.Core 
+				- Ngan.Dict.Client
 		]
 		後續提到的特定平臺的程序集僅有以下職責:
 			- 程序入口(有Main方法或頂層語句)
@@ -68,40 +68,40 @@
 			- 平臺特定功能的方法實現
 		一般不會有UI、交互邏輯等。
 		
-		#H[Ngaq.Client][
+		#H[Ngan.Dict.Client][
 			Http Client。
 			專門用來發網絡請求。
 			不能讀寫文件。
 			要跨平臺 包括Web平臺
 		]
 		
-		#H[Ngaq.Windows][
+		#H[Ngan.Dict.Windows][
 			引用以下程序集:
-			- Ngaq.UI
-			- Ngaq.Backend
+			- Ngan.Dict.UI
+			- Ngan.Dict.Backend
 			Windows入口。
 
 		]
-		#H[Ngaq.Android][
+		#H[Ngan.Dict.Android][
 			引用以下程序集:
-			- Ngaq.UI
-			- Ngaq.Backend
+			- Ngan.Dict.UI
+			- Ngan.Dict.Backend
 			Android入口。
 		]
-		#H[Ngaq.Browser][
+		#H[Ngan.Dict.Browser][
 			瀏覽器入口程序集。
-			引用Ngaq.UI但不引用Ngaq.Backend。
+			引用Ngan.Dict.UI但不引用Ngan.Dict.Backend。
 			該程序集用wasm跑在瀏覽器上 不能讀寫文件。
 			調用後端接口時 全部通過http請求調用。
 			
-			故Ngaq.Core中定義的接口 ISvcXxx 一般都有兩種以上實現
-			一種實現 在 Ngaq.Backend中、作爲非web的客戶端軟件直接讀數據庫;
-			另一種實現 在 Ngaq.Client中、作爲瀏覽器入口的Http Client通過http請求調用Server.Http接口。
-			其中Server.Http又調用Ngaq.Backend的代碼、只是 數據庫從客戶端的sqlite換成了服務器端的pg。
+			故Ngan.Dict.Core中定義的接口 ISvcXxx 一般都有兩種以上實現
+			一種實現 在 Ngan.Dict.Backend中、作爲非web的客戶端軟件直接讀數據庫;
+			另一種實現 在 Ngan.Dict.Client中、作爲瀏覽器入口的Http Client通過http請求調用Server.Http接口。
+			其中Server.Http又調用Ngan.Dict.Backend的代碼、只是 數據庫從客戶端的sqlite換成了服務器端的pg。
 		]
 		後續還有其他平臺特定入口程序集、就不一一列舉了。
 		#H[配置文件][
-			ExternalRsrc/Ngaq.jsonc
+			ExternalRsrc/Ngan.Dict.jsonc
 			
 			客戶端配置文件
 			
@@ -113,7 +113,7 @@
 			裏面的數據的內容是不固定的、就是在開發環境做非自動化的隨手自測時 會改到裏面的數據。
 		]
 	]
-	#H[Ngaq.Test][
+	#H[Ngan.Dict.Test][
 		測試目錄。不包含Web服务端测试。
 		
 		使用的测试框架: 自研 Tsinswreng.CsTreeTest。
@@ -123,46 +123,46 @@
 		
 		其`proj/`下有多個程序集:
 		
-		#H[Ngaq.Core.Test][
+		#H[Ngan.Dict.Core.Test][
 			
 		]
 		
-		#H[Ngaq.Backend.Test][
+		#H[Ngan.Dict.Backend.Test][
 			
 		]
 		
-		#H[Ngaq.Windows.Test][
+		#H[Ngan.Dict.Windows.Test][
 			入口程序集。
 			引用其他测试程序集。
 		]
 		- 測試: 指自動化測試、程序自動比較測試用例的預期輸出和實際輸出、批量測試多項
 	]
 
-	#H[Ngaq.Server/][
+	#H[Ngan.Dict.Server/][
 		Web服務端目錄(不是程序集)
 		其proj/下有多個程序集。
-		#H[Ngaq.Server][
+		#H[Ngan.Dict.Server][
 			Web服務端 核心程序集
 			
 			引用
-			- Ngaq.Backend
+			- Ngan.Dict.Backend
 		]
-		#H[Ngaq.Server.Http][
+		#H[Ngan.Dict.Server.Http][
 			Web Api程序集。
 			
-			主要是把Ngaq.Server的接口 實現成Web Api(http)。
+			主要是把Ngan.Dict.Server的接口 實現成Web Api(http)。
 			
 			引用
-			- Ngaq.Server
+			- Ngan.Dict.Server
 		]
 		
-		#H[Ngaq.Server.Test][
+		#H[Ngan.Dict.Server.Test][
 			Web 服務端 測試程序集。
 			
 			引用
-			- Ngaq.Server
-			- Ngaq.Server.Http
-			- Ngaq.Test
+			- Ngan.Dict.Server
+			- Ngan.Dict.Server.Http
+			- Ngan.Dict.Test
 		]
 		
 	]

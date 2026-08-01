@@ -86,7 +86,7 @@ WebApi 端點層(Controller) 規範
 
 有
 
-### ngaq-code-doc
+### ngan-dict-code-doc
 
 業務代碼文檔介紹
 
@@ -94,7 +94,7 @@ WebApi 端點層(Controller) 規範
 
 **Common.typ是必看項**
 
-ngaq-code-doc 也看、知道在哪裏找文檔
+ngan-dict-code-doc 也看、知道在哪裏找文檔
 
 根據當前分配的任務、看看要用哪些skill
 
@@ -104,7 +104,7 @@ ngaq-code-doc 也看、知道在哪裏找文檔
 
 ## 寫完代碼之後做甚麼
 
-按 ngaq-code-doc 的規範 更新文檔 **除非用戶明確要求、不要給我跑編譯！**節約token
+按 ngan-dict-code-doc 的規範 更新文檔 **除非用戶明確要求、不要給我跑編譯！**節約token
 
 再次強調三點:
 

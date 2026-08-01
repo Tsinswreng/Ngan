@@ -49,13 +49,13 @@ public class SvcKv:ISvcKv{
 
 ```
 		#H[UserCtx][
-			`/Ngaq.Core/Shared/User/UserCtx/IUserCtx.cs`
+			`/Ngan.Dict.Core/Shared/User/UserCtx/IUserCtx.cs`
 			常用API:
 			- `UserCtx.UserId`
 			
 			Svc層中、若函數的前兩個參數爲`IDbFnCtx? Ctx, IUserCtx User`、
 			則應改定義成 `IDbUserCtx`
-			`/Ngaq.Core/Infra/DbUserCtx.cs`
+			`/Ngan.Dict.Core/Infra/DbUserCtx.cs`
 			以減少重複參數數量
 		]
 	]
@@ -71,7 +71,7 @@ public class SvcKv:ISvcKv{
 
 #H[安全相關][
 	對于 實現了 I_Owner接口的 實體、操作該實體時、
-	調用Ngaq.Core/Shared/Base/Models/Po/I_Owner.cs 下 的 CheckOwner 擴展方法
+	調用Ngan.Dict.Core/Shared/Base/Models/Po/I_Owner.cs 下 的 CheckOwner 擴展方法
 	
 	要求: 在 Svc和Dao 及 必要的其他地方
 	

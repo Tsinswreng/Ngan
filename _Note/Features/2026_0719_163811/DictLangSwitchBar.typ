@@ -16,7 +16,7 @@
 ````md
 看完目前詞典頁與語言選擇頁後，問題很明確：
 
-- 點源語言後，[ViewDictionary.Impl.cs](E:/_code/CsNgaq/Ngaq.Frontend/proj/Ngaq.Ui/Views/Dictionary/ViewDictionary.Impl.cs:235) 會把當前源語言代碼預填進搜索框。
+- 點源語言後，[ViewDictionary.Impl.cs](E:/_code/CsNgan.Dict/Ngan.Dict.Frontend/proj/Ngan.Dict.Ui/Views/Dictionary/ViewDictionary.Impl.cs:235) 會把當前源語言代碼預填進搜索框。
 - 選擇頁載入時立即按此代碼搜索，因此只顯示當前語言。
 - 必須清空後，才會顯示按權重排序的完整列表。
 

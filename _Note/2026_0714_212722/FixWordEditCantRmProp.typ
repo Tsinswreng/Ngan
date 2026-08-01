@@ -1,6 +1,6 @@
 -T[2026_0714_212740][
 	先看skill。
-	然後看`E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs`
+	然後看`E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs`
 	及其他相關文件。
 	
 	現在有個bug、
@@ -35,7 +35,7 @@
 	-T[2026_0718_165243][
 		先看skill
 		然後看
-		`E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs`
+		`E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs`
 		你改一下、
 		把ViewWordEditV2 底部的 刪除按鈕 和 保存按鈕 移到 ViewPoWordEdit 下面。
 		
@@ -53,7 +53,7 @@
 -Sesn[
 	-T[2026_0718_165243][
 	先看skill。
-	然後看`E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs`
+	然後看`E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs`
 	及其他相關文件。
 	
 	現在有個bug、

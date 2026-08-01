@@ -1,9 +1,9 @@
 -Sesn[
 	-T[2026_0723_200745][
 		先看Skill和記憶。
-		然後看CsNgaq這個項目。
+		然後看CsNgan.Dict這個項目。
 		看
-		`E:\_code\CsNgaq\Ngaq.Core\Shared\Word\Svc\ISvcWordV2.cs`。
+		`E:\_code\CsNgan.Dict\Ngan.Dict.Core\Shared\Word\Svc\ISvcWordV2.cs`。
 		這裏有個單詞備份同步功能。
 		有個雲端同步。
 		目前雲端同步要連服務器、比較費錢且麻煩。
@@ -34,7 +34,7 @@
 1. Android 端你希望選哪個方向？
 
    - 第一階段只支持 Windows 外部 Git，Android 後續單獨研究。
-   - Android 要求用戶安裝 Termux/git，Ngaq 通過 Termux 接口調用。
+   - Android 要求用戶安裝 Termux/git，Ngan.Dict 通過 Termux 接口調用。
    - App 自帶 Git 實現或 Git 可執行文件；工程量、AOT/原生庫和認證處理都會明顯增加。
    - 可以不執行真正的 Git 命令，改用 GitHub/GitLab/Gitea API 操作倉庫。
 
@@ -46,7 +46,7 @@
    - SSH key。
    - 依賴用戶電腦現有的 Git Credential Manager；這只適合 Windows，Android 無法保持相同體驗。
 
-相關現有入口是 [ISvcWordV2.cs](E:/_code/CsNgaq/Ngaq.Core/Shared/Word/Svc/ISvcWordV2.cs:258)、[SvcWordV2.Sync.cs](E:/_code/CsNgaq/Ngaq.Backend/Domains/Word/Svc/SvcWordV2.Sync.cs:217) 和 [ClientWordSyncV2.cs](E:/_code/CsNgaq/Ngaq.Frontend/proj/Ngaq.Client/Word/Svc/ClientWordSyncV2.cs:15)。目前業務文檔目錄沒有詞庫備份同步的專門文檔；如果後續實施，應一併補上。
+相關現有入口是 [ISvcWordV2.cs](E:/_code/CsNgan.Dict/Ngan.Dict.Core/Shared/Word/Svc/ISvcWordV2.cs:258)、[SvcWordV2.Sync.cs](E:/_code/CsNgan.Dict/Ngan.Dict.Backend/Domains/Word/Svc/SvcWordV2.Sync.cs:217) 和 [ClientWordSyncV2.cs](E:/_code/CsNgan.Dict/Ngan.Dict.Frontend/proj/Ngan.Dict.Client/Word/Svc/ClientWordSyncV2.cs:15)。目前業務文檔目錄沒有詞庫備份同步的專門文檔；如果後續實施，應一併補上。
 ````
 	]
 	
@@ -80,7 +80,7 @@
 
 ```text
 repo/
-  ngaq-sync.json
+  ngan.dict-sync.json
   devices/
     windows-pc/
       words/
@@ -95,7 +95,7 @@ repo/
         ff.jsonl
 ```
 
-每臺設備只寫自己的目錄；Git 負責搬運文件，Ngaq 負責把其他設備的快照合入本地資料庫。
+每臺設備只寫自己的目錄；Git 負責搬運文件，Ngan.Dict 負責把其他設備的快照合入本地資料庫。
 
 **三種現有方案比較**
 
@@ -127,11 +127,11 @@ SQLite 是分頁二進制文件。增刪資料、頁面分裂、索引調整、`
 所有 JnWord → JSONL → 整體單一 GZip → TextWithStream
 ```
 
-實現在 [Packer.cs](E:/_code/CsNgaq/Ngaq.Core/Shared/Sync/Packer.cs:16)。
+實現在 [Packer.cs](E:/_code/CsNgan.Dict/Ngan.Dict.Core/Shared/Sync/Packer.cs:16)。
 
 單一 GZip 流中間發生少量變化，後續壓縮字節也可能大量變化，所以 Git 很難復用上一版本。即使工作區每次只有 4MB，持續提交後 `.git` 仍可能快速增加。
 
-此外，目前導出查詢是普通 `SELECT`，沒有 `ORDER BY`，因此輸出順序沒有契約保證，見 [SqlRepo.cs](E:/_code/CsNgaq/Tsinswreng.CsSql/proj/Tsinswreng.CsSql/SqlRepo.cs:110) 和 [SvcWordV2.Sync.cs](E:/_code/CsNgaq/Ngaq.Backend/Domains/Word/Svc/SvcWordV2.Sync.cs:227)。
+此外，目前導出查詢是普通 `SELECT`，沒有 `ORDER BY`，因此輸出順序沒有契約保證，見 [SqlRepo.cs](E:/_code/CsNgan.Dict/Tsinswreng.CsSql/proj/Tsinswreng.CsSql/SqlRepo.cs:110) 和 [SvcWordV2.Sync.cs](E:/_code/CsNgan.Dict/Ngan.Dict.Backend/Domains/Word/Svc/SvcWordV2.Sync.cs:227)。
 
 ### 推薦的分片 JSONL
 
@@ -171,19 +171,19 @@ devices/android-phone/words/*.jsonl
 - Windows 只重寫 `windows-pc`。
 - Android 只重寫 `android-phone`。
 - 手動 Git 合併通常只是兩邊各增加自己的文件變更。
-- Ngaq 導入其他設備的快照，利用現有業務同步規則合併。
+- Ngan.Dict 導入其他設備的快照，利用現有業務同步規則合併。
 - 導入完成後再重新導出自己的快照。
 
 推薦操作順序：
 
 ```text
 git pull
-→ Ngaq 導入其他設備快照
-→ Ngaq 導出當前設備快照
+→ Ngan.Dict 導入其他設備快照
+→ Ngan.Dict 導出當前設備快照
 → git add/commit/push
 ```
 
-現有 `OrdSyncJnWordByBizId()` 已經可以承擔真正的合併工作，見 [ISvcWordV2.cs](E:/_code/CsNgaq/Ngaq.Core/Shared/Word/Svc/ISvcWordV2.cs:258)。因此不需要讓 Git 理解詞庫語義。
+現有 `OrdSyncJnWordByBizId()` 已經可以承擔真正的合併工作，見 [ISvcWordV2.cs](E:/_code/CsNgan.Dict/Ngan.Dict.Core/Shared/Word/Svc/ISvcWordV2.cs:258)。因此不需要讓 Git 理解詞庫語義。
 
 **程序需要配合的功能**
 
@@ -207,7 +207,7 @@ git pull
 
 ```json
 {
-  "format": "Ngaq.WordGitSync",
+  "format": "Ngan.Dict.WordGitSync",
   "version": 1,
   "deviceId": "windows-pc",
   "shardCount": 256,
@@ -264,7 +264,7 @@ git pull
 	
 	-T[2026_0723_215901][
 		那要分也是應該按客戶端實例爲單位分啊 按平臺分有甚麼用?? 根本不嚴謹。
-		- 要  ngaq-sync.json 有甚麼用??
+		- 要  ngan.dict-sync.json 有甚麼用??
 		- 你有沒有搞清楚本地.git的儲存機制?? 搞清對于可diff文本 每次commit之後他是存完整副本還是變化量
 		- 有必要分片嗎??
 		00.jsonl完了又01.jsonl  每個實例節點一個文件還不夠嗎?
@@ -337,7 +337,7 @@ repo/
 
 你現在壓縮詞包只有 4MB，原始 JSONL 即使是幾十 MB，也沒有充分理由分片。分片反而增加文件管理、原子更新、殘留舊分片和格式設計的複雜度。
 
-**`ngaq-sync.json` 有甚麼用**
+**`ngan.dict-sync.json` 有甚麼用**
 
 主要用途本來是保存：
 
@@ -352,7 +352,7 @@ repo/
 更簡單的方案是將元信息放在 JSONL 第一行：
 
 ```json
-{"$type":"NgaqWordSnapshot","formatVersion":1,"instanceId":"019f8f...","wordSchemaVersion":1}
+{"$type":"Ngan.DictWordSnapshot","formatVersion":1,"instanceId":"019f8f...","wordSchemaVersion":1}
 {"word":{...},"props":[...],"learns":[...]}
 {"word":{...},"props":[...],"learns":[...]}
 ```
@@ -365,7 +365,7 @@ words/{InstanceId}.v1.jsonl
 
 我的傾向是首行元信息，因為程序拿到單個文件即可驗證，不依賴旁邊一定存在另一個文件。但如果你追求最純粹的 JSONL，每行都必須是 `JnWord`，那麼單獨的 manifest 才有價值。
 
-全局 `ngaq-sync.json` 還有一個問題：所有實例都可能改它，會重新製造共享文件衝突。因此若需要元信息，也應放在實例文件內，或者：
+全局 `ngan.dict-sync.json` 還有一個問題：所有實例都可能改它，會重新製造共享文件衝突。因此若需要元信息，也應放在實例文件內，或者：
 
 ```text
 instances/{InstanceId}/meta.json

@@ -3,12 +3,12 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-APP_VERSION_FILE="$ROOT_DIR/Ngaq.Core/Infra/AppVersion.cs"
-ANDROID_CSPROJ="$ROOT_DIR/Ngaq.Frontend/proj/Ngaq.Android/Ngaq.Android.csproj"
-WINDOWS_PROJECT="$ROOT_DIR/Ngaq.Frontend/proj/Ngaq.Windows/Ngaq.Windows.csproj"
-LINUX_PROJECT="$ROOT_DIR/Ngaq.Frontend/proj/Ngaq.Linux/Ngaq.Linux.csproj"
-ANDROID_PROJECT="$ROOT_DIR/Ngaq.Frontend/proj/Ngaq.Android/Ngaq.Android.csproj"
-TEST_PROJECT="$ROOT_DIR/Ngaq.Test/proj/Ngaq.Windows.Test/Ngaq.Windows.Test.csproj"
+APP_VERSION_FILE="$ROOT_DIR/Ngan.Dict.Core/Infra/AppVersion.cs"
+ANDROID_CSPROJ="$ROOT_DIR/Ngan.Dict.Frontend/proj/Ngan.Dict.Android/Ngan.Dict.Android.csproj"
+WINDOWS_PROJECT="$ROOT_DIR/Ngan.Dict.Frontend/proj/Ngan.Dict.Windows/Ngan.Dict.Windows.csproj"
+LINUX_PROJECT="$ROOT_DIR/Ngan.Dict.Frontend/proj/Ngan.Dict.Linux/Ngan.Dict.Linux.csproj"
+ANDROID_PROJECT="$ROOT_DIR/Ngan.Dict.Frontend/proj/Ngan.Dict.Android/Ngan.Dict.Android.csproj"
+TEST_PROJECT="$ROOT_DIR/Ngan.Dict.Test/proj/Ngan.Dict.Windows.Test/Ngan.Dict.Windows.Test.csproj"
 
 VERSION=""
 BUILD_ID=""
@@ -169,7 +169,7 @@ copy_shared_assets() {
 }
 
 prepare_android_assets() {
-	local android_assets_dir="$ROOT_DIR/Ngaq.Frontend/proj/Ngaq.Android/Assets"
+	local android_assets_dir="$ROOT_DIR/Ngan.Dict.Frontend/proj/Ngan.Dict.Android/Assets"
 	rm -rf "$android_assets_dir"
 	mkdir -p "$android_assets_dir"
 	cp -r "$ROOT_DIR/ExternalRsrc/." "$android_assets_dir/"
@@ -182,9 +182,9 @@ run_tests() {
 	fi
 
 	local test_output="$ARTIFACT_ROOT/test-runner"
-	log "publishing and running Ngaq.Windows.Test"
+	log "publishing and running Ngan.Dict.Windows.Test"
 	dotnet publish "$TEST_PROJECT" -c Release -r win-x64 -p:AllowMissingPrunePackageData=true -o "$test_output"
-	"$test_output/Ngaq.Windows.Test.exe"
+	"$test_output/Ngan.Dict.Windows.Test.exe"
 }
 
 package_tar_gz() {
@@ -207,7 +207,7 @@ publish_windows() {
 	log "publishing Windows client"
 	dotnet publish "$WINDOWS_PROJECT" -c Release -r win-x64 --self-contained true -p:AllowMissingPrunePackageData=true -o "$publish_dir"
 	copy_shared_assets "$publish_dir"
-	package_tar_gz "$publish_dir" "$package_dir/Ngaq.Windows-win-x64.tar.gz" "$package_dir/_tmp"
+	package_tar_gz "$publish_dir" "$package_dir/Ngan.Dict.Windows-win-x64.tar.gz" "$package_dir/_tmp"
 }
 
 publish_linux() {
@@ -218,11 +218,11 @@ publish_linux() {
 	log "publishing Linux client"
 	dotnet publish "$LINUX_PROJECT" -c Release -r linux-x64 --self-contained true -p:AllowMissingPrunePackageData=true -o "$publish_dir"
 	copy_shared_assets "$publish_dir"
-	package_tar_gz "$publish_dir" "$package_dir/Ngaq.Linux-linux-x64.tar.gz" "$package_dir/_tmp"
+	package_tar_gz "$publish_dir" "$package_dir/Ngan.Dict.Linux-linux-x64.tar.gz" "$package_dir/_tmp"
 }
 
 publish_android() {
-	local publish_dir="$ROOT_DIR/Ngaq.Frontend/proj/Ngaq.Android/bin/Release/net10.0-android/publish"
+	local publish_dir="$ROOT_DIR/Ngan.Dict.Frontend/proj/Ngan.Dict.Android/bin/Release/net10.0-android/publish"
 	local artifact_dir="$ARTIFACT_ROOT/android"
 	mkdir -p "$artifact_dir"
 

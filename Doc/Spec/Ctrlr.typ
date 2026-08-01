@@ -4,4 +4,4 @@
 Web Server Http Api (Controller) 撰寫規範
 
 
-見 Ngaq.Server/proj/Ngaq.Server.Http/Domains/Sample/CtrlrSample.cs
+見 Ngan.Dict.Server/proj/Ngan.Dict.Server.Http/Domains/Sample/CtrlrSample.cs

@@ -34,7 +34,7 @@ description: CsTreeTest測試框架寫法規範
 	不直接註冊每個測試類, 而是收編下級 TestMgr。
 
 	參考:
-	- `Ngaq.Test/proj/Ngaq.Windows.Test/WindowsTestMgr.cs`
+	- `Ngan.Dict.Test/proj/Ngan.Dict.Windows.Test/WindowsTestMgr.cs`
 
 	參考寫法:
 	```cs

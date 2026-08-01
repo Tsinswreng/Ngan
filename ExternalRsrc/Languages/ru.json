@@ -288,7 +288,7 @@
       "DictionaryLookupHotkeyModifiers_": "Модификаторы горячей клавиши словаря",
       "DictionaryLookupHotkeyKey": "Горячая клавиша словаря",
       "WordEditorOpenerNotReady": "Открыватель редактора слов не готов",
-      "NgaqDictionaryLookup": "Поиск в словаре",
+      "Ngan.DictDictionaryLookup": "Поиск в словаре",
       "TapReadClipboardAndAutoLookup": "Нажмите для чтения буфера обмена и автопоиска",
       "WeightAlgorithmPluginDoc": "Документация плагина алгоритма веса",
       "TakeEffectAfterTheProgramIsRestarted": "Применение после перезапуска программы"

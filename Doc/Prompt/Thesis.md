@@ -1,10 +1,10 @@
 ```yaml
 files:
   paths:
-    - E:\_code\CsNgaq\.agents\skills\ngaq-code-doc\SKILL.md
-    - E:\_code\CsNgaq\Thesis\skills\WriteTypst.typ
-    - E:\_code\CsNgaq\Thesis\skills\WriteContent.typ
-    - E:\_code\CsNgaq\Thesis\skills\HandleTodo.typ
+    - E:\_code\CsNgan.Dict\.agents\skills\ngan.dict-code-doc\SKILL.md
+    - E:\_code\CsNgan.Dict\Thesis\skills\WriteTypst.typ
+    - E:\_code\CsNgan.Dict\Thesis\skills\WriteContent.typ
+    - E:\_code\CsNgan.Dict\Thesis\skills\HandleTodo.typ
   regex:
     - rootDir: ""
       includes:

@@ -17,10 +17,10 @@
 		- 放通用遷移抽象與執行器（`IMigrationMgr`、`MigrationMgr`、`MigrationRunner` 等）。
 		- 不放業務遷移內容。
 
-	- `Ngaq.Backend`
+	- `Ngan.Dict.Backend`
 		- 放客戶端遷移清單（`UseLocalMigrations()`）與本地遷移類。
 
-	- `Ngaq.Server`
+	- `Ngan.Dict.Server`
 		- 放服務端遷移清單（`UseServerMigrations()`）與服務端遷移類。
 ]
 

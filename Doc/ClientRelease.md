@@ -8,10 +8,10 @@ sh ./ReleaseClients.sh --version 1.2.2
 
 ## 功能
 
-- 同步更新 `Ngaq.Core/Infra/AppVersion.cs`
-- 同步更新 `Ngaq.Frontend/proj/Ngaq.Android/Ngaq.Android.csproj`
+- 同步更新 `Ngan.Dict.Core/Infra/AppVersion.cs`
+- 同步更新 `Ngan.Dict.Frontend/proj/Ngan.Dict.Android/Ngan.Dict.Android.csproj`
 - 可选执行 `GenI18n.sh`
-- 可选执行 `Ngaq.Windows.Test` 的 `Release + win-x64` 发布并运行
+- 可选执行 `Ngan.Dict.Windows.Test` 的 `Release + win-x64` 发布并运行
 - 构建 Windows / Linux / Android 客户端
 - 将产物整理到 `artifacts/client/<display-version>/`
 

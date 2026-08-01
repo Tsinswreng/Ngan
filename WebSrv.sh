@@ -1,4 +1,4 @@
 sh ./CpAssets.sh
-cd Ngaq.Server/proj/Ngaq.Server.Http
+cd Ngan.Dict.Server/proj/Ngan.Dict.Server.Http
 dotnet build
 #dotnet run

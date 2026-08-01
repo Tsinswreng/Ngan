@@ -1,22 +1,22 @@
-[submodule "Ngaq.Core"]
-	path = Ngaq.Core
-	url = https://github.com/Tsinswreng/Ngaq.Core.git
+[submodule "Ngan.Dict.Core"]
+	path = Ngan.Dict.Core
+	url = https://github.com/Tsinswreng/Ngan.Dict.Core.git
 
-[submodule "Ngaq.Backend"]
-	path = Ngaq.Backend
-	url = https://github.com/Tsinswreng/Ngaq.Backend.git
+[submodule "Ngan.Dict.Backend"]
+	path = Ngan.Dict.Backend
+	url = https://github.com/Tsinswreng/Ngan.Dict.Backend.git
 
-[submodule "Ngaq.Frontend"]
-	path = Ngaq.Frontend
-	url = https://github.com/Tsinswreng/Ngaq.Frontend.git
+[submodule "Ngan.Dict.Frontend"]
+	path = Ngan.Dict.Frontend
+	url = https://github.com/Tsinswreng/Ngan.Dict.Frontend.git
 
-[submodule "Ngaq.Server"]
-	path = Ngaq.Server
-	url = https://github.com/Tsinswreng/Ngaq.Server.git
+[submodule "Ngan.Dict.Server"]
+	path = Ngan.Dict.Server
+	url = https://github.com/Tsinswreng/Ngan.Dict.Server.git
 
-[submodule "Ngaq.Test"]
-	path = Ngaq.Test
-	url = https://github.com/Tsinswreng/Ngaq.Test.git
+[submodule "Ngan.Dict.Test"]
+	path = Ngan.Dict.Test
+	url = https://github.com/Tsinswreng/Ngan.Dict.Test.git
 
 
 [submodule "Tsinswreng.CsTypeAlias"]

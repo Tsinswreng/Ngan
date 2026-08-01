@@ -1,0 +1,35 @@
+//用戶配置文件優先級高於GUI配置
+{
+	"Version": "1.0.0"
+	//,"Lang": "zh-TW"
+	,"RwCfgPath": "Ngan.Dict.Rw.jsonc"
+	,"SqlitePath": "./Ngan.Dict.sqlite"
+	// ,"GalleryDirs": ["", "f:/"]
+	//,"ServerBaseUrl": "http://localhost:5000/"
+	,"Background": {
+		"GalleryDirs": [
+			// "E:/_/視聽/圖"
+			// ,"C:/Users/lenovo/Pictures/qq_image/20240913141225"
+			//"C:/Users/lenovo/Pictures/屏保/scene"
+		],
+		"Order": "Random" //TODO
+		,"Stretch": "UniformToFill" //TODO
+		,"Brightness": 1.0 //TODO
+	}
+	,"Ui":{
+		//"BaseFontSize": 18.0
+
+	},
+	"Word":{
+		"MaxDisplayedWordCount": 999999
+	},
+	"LlmDictionary":{
+		"ApiUrl": "https://api.deepseek.com/v1/chat/completions",
+		"Model": "deepseek-v4-flash",
+		"ApiKey": "",
+		"ExtraBodyJson": "{\n    \"thinking\": {\"type\": \"disabled\"}\n}"
+	}
+
+
+}
+

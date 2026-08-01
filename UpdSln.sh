@@ -1,11 +1,11 @@
-rm Ngaq.sln
-dotnet new sln -n Ngaq
-dotnet sln add Ngaq.Core/Ngaq.Core.csproj
-dotnet sln add Ngaq.Backend/Ngaq.Backend.csproj
-dotnet sln add Ngaq.Doc/proj/**/*.csproj
-dotnet sln add Ngaq.Test/proj/**/*.csproj
-dotnet sln add Ngaq.Frontend/proj/**/*.csproj
-dotnet sln add Ngaq.Server/proj/**/*.csproj
+rm Ngan.Dict.sln
+dotnet new sln -n Ngan.Dict
+dotnet sln add Ngan.Dict.Core/Ngan.Dict.Core.csproj
+dotnet sln add Ngan.Dict.Backend/Ngan.Dict.Backend.csproj
+dotnet sln add Ngan.Dict.Doc/proj/**/*.csproj
+dotnet sln add Ngan.Dict.Test/proj/**/*.csproj
+dotnet sln add Ngan.Dict.Frontend/proj/**/*.csproj
+dotnet sln add Ngan.Dict.Server/proj/**/*.csproj
 
 dotnet sln add Tsinswreng.CsCore/proj/**/*.csproj
 dotnet sln add Tsinswreng.CsCtx/proj/**/*.csproj

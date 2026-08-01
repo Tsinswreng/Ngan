@@ -7,7 +7,7 @@
 			"type": "process",
 			"args": [
 				"build",
-				"${workspaceFolder}/Ngaq.sln",
+				"${workspaceFolder}/Ngan.Dict.sln",
 				"/property:GenerateFullPaths=true",
 				"/consoleloggerparameters:NoSummary;ForceNoAlign"
 			],
@@ -19,7 +19,7 @@
 			"type": "process",
 			"args": [
 				"publish",
-				"${workspaceFolder}/Ngaq.sln",
+				"${workspaceFolder}/Ngan.Dict.sln",
 				"/property:GenerateFullPaths=true",
 				"/consoleloggerparameters:NoSummary;ForceNoAlign"
 			],
@@ -33,7 +33,7 @@
 				"watch",
 				"run",
 				"--project",
-				"${workspaceFolder}/Ngaq.sln"
+				"${workspaceFolder}/Ngan.Dict.sln"
 			],
 			"problemMatcher": "$msCompile"
 		},
@@ -45,7 +45,7 @@
 				"build",
 				"--no-restore",
 				"-t:Run",
-				"${workspaceFolder}/Ngaq.Frontend/proj/Ngaq.Android/Ngaq.Android.csproj",
+				"${workspaceFolder}/Ngan.Dict.Frontend/proj/Ngan.Dict.Android/Ngan.Dict.Android.csproj",
 				"-p:TargetFramework=net10.0-android",
 				"-p:Configuration=Debug",
 				"-p:AndroidAttachDebugger=true",

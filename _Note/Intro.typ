@@ -64,6 +64,6 @@ TypeAlias.cs
 
 
 
-我做了一個用于程序 用于背單詞 叫CsNgaq
+我做了一個用于程序 用于背單詞 叫CsNgan.Dict
 主要是C-S架構。客戶端是c\# avalonia寫的。目前支持windows, linux, Android平臺。支持AOT編譯。其中使用了我自己做的CsSqlHelper。
 該程序不提供

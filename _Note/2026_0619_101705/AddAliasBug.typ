@@ -1,10 +1,10 @@
 2026_0619_101802[
-E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Dictionary\ViewDictionary.cs
+E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Dictionary\ViewDictionary.cs
 
 在詞典頁查詢單詞後
 點擊保存 進入
 
-E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs。
+E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Word\WordEditV2\ViewWordEditV2.cs。
 
 這裏有兩個問題
 
@@ -15,13 +15,13 @@ ViewWordEditV2 裏面 Property 和 Learn的編輯頁都沒有Id顯示。要把id
 代碼規範看
 ````
     # skill/write-csharp-code
-    - E:\_code\CsNgaq\.agents\skills\write-csharp-code\SKILL.md
-    - E:\_code\CsNgaq\Doc\Spec\Common.typ
-    - E:\_code\CsNgaq\Doc\Spec\Frontend.typ
-    - E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\CodeTemplate\Sample\**
-    - E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Infra\ViewModelBase.cs
-    - E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\MainView.Decl.cs
-    - E:\_code\CsNgaq\Doc\Spec\IView.typ
+    - E:\_code\CsNgan.Dict\.agents\skills\write-csharp-code\SKILL.md
+    - E:\_code\CsNgan.Dict\Doc\Spec\Common.typ
+    - E:\_code\CsNgan.Dict\Doc\Spec\Frontend.typ
+    - E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\CodeTemplate\Sample\**
+    - E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Infra\ViewModelBase.cs
+    - E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\MainView.Decl.cs
+    - E:\_code\CsNgan.Dict\Doc\Spec\IView.typ
 ````
 
 ]

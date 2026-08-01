@@ -1,8 +1,8 @@
 -Sesn[
 	-T[2026_0719_161531][
 		先看skill。
-		然後看CsNgaq這個項目。
-		當前有全局異常處理`E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Infra\GlobalExceptionGuard.cs`。
+		然後看CsNgan.Dict這個項目。
+		當前有全局異常處理`E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Infra\GlobalExceptionGuard.cs`。
 		在Vm中、大多數的方法都是手動
 		```cs
 		try{
@@ -24,8 +24,8 @@
 
 - `TaskScheduler.UnobservedTaskException` 可能等到 Task 被 GC 才觸發，不能保證即時提示。
 - `AppDomain.UnhandledException` 通常已接近程序終止，不能作正常業務流程。
-- 全局 UI 異常目前一律設置 `E.Handled = true`，若異常發生後狀態已損壞，強行繼續運行可能更危險，見 [GlobalExceptionGuard.cs](E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Infra\GlobalExceptionGuard.cs:31)。
-- 全局守衛現在並未調用 `HandleErr`，而是自己展示 UnknownErr，業務異常的本地化信息會丟失，見 [GlobalExceptionGuard.cs](E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Infra\GlobalExceptionGuard.cs:49)。
+- 全局 UI 異常目前一律設置 `E.Handled = true`，若異常發生後狀態已損壞，強行繼續運行可能更危險，見 [GlobalExceptionGuard.cs](E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Infra\GlobalExceptionGuard.cs:31)。
+- 全局守衛現在並未調用 `HandleErr`，而是自己展示 UnknownErr，業務異常的本地化信息會丟失，見 [GlobalExceptionGuard.cs](E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Infra\GlobalExceptionGuard.cs:49)。
 
 更合適的結構是：
 
@@ -47,14 +47,14 @@ GlobalExceptionGuard
 
 項目其實已經有這個雛形：
 
-- `OpBtn` 會觀察 Task 並調用 `FnFail`，見 [OpBtn.cs](E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Infra\Ctrls\OpBtn.cs:108)。
-- `SetExe` 已經把 `FnFail` 接到 `MainView.Inst.HandleErr`，見 [AppOpBtn.cs](E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Infra\Ctrls\AppOpBtn.cs:30)。
+- `OpBtn` 會觀察 Task 並調用 `FnFail`，見 [OpBtn.cs](E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Infra\Ctrls\OpBtn.cs:108)。
+- `SetExe` 已經把 `FnFail` 接到 `MainView.Inst.HandleErr`，見 [AppOpBtn.cs](E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Infra\Ctrls\AppOpBtn.cs:30)。
 
 因此，經 `OpBtn.SetExe(...)` 調用、catch 中僅有 `HandleErr(ex)` 的 VM 方法，原則上可以直接移除該 catch，讓 Task 失敗後由按鈕執行邊界處理。
 
 但是不能批量刪除所有 catch。例如：
 
-- [VmAddWord.cs](E:\_code\CsNgaq\Ngaq.Frontend\proj\Ngaq.Ui\Views\Word\WordManage\AddWord\VmAddWord.cs:60) 的 catch 還設置了 `ErrStr`。
+- [VmAddWord.cs](E:\_code\CsNgan.Dict\Ngan.Dict.Frontend\proj\Ngan.Dict.Ui\Views\Word\WordManage\AddWord\VmAddWord.cs:60) 的 catch 還設置了 `ErrStr`。
 - 詞典查詢的 catch 會處理取消、恢復舊狀態、保留流式輸出以及提供替代操作。
 - 有些方法用 `bool` 返回成功與否，catch 還負責返回 `false`。
 - `OperationCanceledException` 通常不應作業務錯誤彈窗。
