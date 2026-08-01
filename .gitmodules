@@ -1,21 +1,6 @@
-[submodule "Ngan.Dict.Backend"]
-	path = Ngan.Dict.Backend
-	url = https://github.com/Tsinswreng/Ngan.Dict.Backend.git
-[submodule "Ngan.Dict.Core"]
-	path = Ngan.Dict.Core
-	url = https://github.com/Tsinswreng/Ngan.Dict.Core.git
-[submodule "Ngan.Dict.Doc"]
-	path = Ngan.Dict.Doc
-	url = https://github.com/Tsinswreng/Ngan.Dict.Doc.git
-[submodule "Ngan.Dict.Frontend"]
-	path = Ngan.Dict.Frontend
-	url = https://github.com/Tsinswreng/Ngan.Dict.Frontend.git
-[submodule "Ngan.Dict.Server"]
-	path = Ngan.Dict.Server
-	url = https://github.com/Tsinswreng/Ngan.Dict.Server.git
-[submodule "Ngan.Dict.Test"]
-	path = Ngan.Dict.Test
-	url = https://github.com/Tsinswreng/Ngan.Dict.Test.git
+[submodule "Ngan.Dict"]
+	path = Ngan.Dict
+	url = https://github.com/Tsinswreng/Ngan.Dict.git
 [submodule "Tsinswreng.AvlnTools"]
 	path = Tsinswreng.AvlnTools
 	url = https://github.com/Tsinswreng/AvlnTools.git
